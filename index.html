@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casavecchia — Weekly Marketing Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--russet:#924a3b;--sage:#8d988e;--olive:#4e6e58;--taupe:#b99d87;--blush:#dbc5b1;--stone:#d6ccc4;--dark:#2a2520;--mid:#5a5249;--light:#f5f0eb;--white:#fdfaf7;--yt:#ff0000;--border:rgba(180,168,155,.2)}
+body{font-family:'Montserrat',sans-serif;background:var(--light);color:var(--dark);min-height:100vh}
+.header{background:var(--dark);padding:28px 40px 24px;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;background:var(--russet);opacity:.12}
+.header::after{content:'';position:absolute;bottom:-40px;left:100px;width:160px;height:160px;border-radius:50%;background:var(--olive);opacity:.10}
+.header-inner{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px}
+.brand{display:flex;align-items:center;gap:13px}
+.brand-mark{width:34px;height:34px;background:var(--russet);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;color:#fff;font-size:15px;font-weight:600}
+.brand-name{font-family:'Playfair Display',serif;color:#fff;font-size:20px;font-weight:400}
+.brand-tag{color:var(--blush);font-size:10px;font-weight:300;letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+.week-label{text-align:right}
+.week-label h1{font-family:'Playfair Display',serif;color:#fff;font-size:14px;font-weight:400;margin-bottom:3px}
+.week-label p{color:var(--stone);font-size:10px;font-weight:300;letter-spacing:1px;text-transform:uppercase}
+.strip{background:var(--russet);padding:12px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.si{display:flex;flex-direction:column;align-items:center;gap:1px}
+.sn{font-family:'Playfair Display',serif;color:#fff;font-size:18px}
+.sl{color:rgba(255,255,255,.7);font-size:9px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase}
+.sd{width:1px;height:28px;background:rgba(255,255,255,.2)}
+.tabs{background:var(--white);border-bottom:1px solid var(--border);padding:0 40px;display:flex;gap:0;overflow-x:auto}
+.tab{padding:14px 20px;font-size:11px;font-weight:500;letter-spacing:.5px;color:var(--mid);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;user-select:none}
+.tab:hover{color:var(--dark)}
+.tab.active{color:var(--russet);border-bottom-color:var(--russet)}
+.panel{display:none;padding:28px 40px}
+.panel.active{display:block}
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g21{grid-template-columns:2fr 1fr}
+.g12{grid-template-columns:1fr 2fr}
+.span2{grid-column:span 2}
+.span3{grid-column:span 3}
+.card{background:var(--white);border-radius:12px;padding:22px;border:1px solid var(--border);animation:fadeUp .4s ease both}
+.card.muted{background:rgba(146,74,59,.04);border-color:rgba(146,74,59,.15)}
+.card.olive{background:rgba(78,110,88,.04);border-color:rgba(78,110,88,.15)}
+.card.yt-card{background:rgba(255,0,0,.03);border-color:rgba(255,0,0,.12)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.lbl{font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--taupe);margin-bottom:10px}
+.ttl{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);margin-bottom:3px}
+.sub{font-size:11px;color:var(--mid);font-weight:300;margin-bottom:14px;line-height:1.5}
+.row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(180,168,155,.12)}
+.row:last-child{border-bottom:none}
+.rn{font-size:12px;color:var(--mid);display:flex;align-items:center;gap:7px}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dig{background:#c13584}.dfb{background:#1877f2}.dyt{background:var(--yt)}.dem{background:var(--olive)}
+.rv{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark)}
+.d{font-size:10px;font-weight:500;padding:2px 7px;border-radius:20px}
+.up{color:var(--olive);background:rgba(78,110,88,.1)}
+.dn{color:var(--russet);background:rgba(146,74,59,.1)}
+.fl{color:var(--mid);background:rgba(90,82,73,.08)}
+.warn{color:#a06000;background:rgba(160,96,0,.1)}
+.ig-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:4px}
+.ic{background:var(--light);border-radius:8px;padding:12px 14px}
+.ic.tot{background:rgba(78,110,88,.08)}
+.in{font-family:'Playfair Display',serif;font-size:24px;color:var(--dark)}
+.ic.tot .in{color:var(--olive)}
+.is{font-size:9px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--mid);margin-top:1px}
+.bars{display:flex;align-items:flex-end;gap:3px;height:40px;margin-top:12px}
+.b{flex:1;border-radius:2px 2px 0 0;background:var(--sage);opacity:.35}
+.b.hi{background:var(--russet);opacity:.75}.b.cur{background:var(--olive);opacity:1}
+.prog{margin-top:10px}
+.prog-head{display:flex;justify-content:space-between;font-size:10px;color:var(--mid);margin-bottom:5px}
+.prog-bg{height:5px;background:rgba(180,168,155,.25);border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;border-radius:3px;transition:width 1.2s ease}
+.fill-olive{background:var(--olive)}.fill-russet{background:var(--russet)}.fill-yt{background:var(--yt)}.fill-warn{background:#d4890a}
+.prog-note{font-size:10px;color:var(--taupe);margin-top:5px;font-weight:300;line-height:1.5}
+.tp{margin-top:12px;padding:11px 14px;background:var(--light);border-radius:8px;border-left:3px solid var(--olive)}
+.tp-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--taupe);margin-bottom:4px}
+.tp-t{font-size:12px;font-weight:500;color:var(--dark)}
+.tp-m{font-size:11px;color:var(--mid);font-weight:300;margin-top:2px}
+.note{margin-top:12px;padding:10px 14px;background:rgba(78,110,88,.06);border-radius:8px;border-left:3px solid var(--sage);font-size:11px;color:var(--mid);line-height:1.7}
+.note.red{background:rgba(146,74,59,.05);border-left-color:var(--russet)}
+.note.amber{background:rgba(160,96,0,.05);border-left-color:#d4890a}
+.note strong{color:var(--dark);font-weight:500}
+.insight-block{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.insight-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.insight-tag{display:inline-block;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.tag-critical{background:rgba(146,74,59,.12);color:var(--russet)}
+.tag-opportunity{background:rgba(78,110,88,.12);color:var(--olive)}
+.tag-warning{background:rgba(160,96,0,.12);color:#a06000}
+.tag-info{background:rgba(141,152,142,.15);color:var(--mid)}
+.insight-title{font-family:'Playfair Display',serif;font-size:16px;color:var(--dark);margin-bottom:6px}
+.insight-body{font-size:12px;color:var(--mid);line-height:1.75}
+.insight-stat{display:inline-flex;align-items:center;gap:6px;background:var(--light);border-radius:6px;padding:5px 11px;margin:8px 6px 0 0;font-size:11px;font-weight:500;color:var(--dark)}
+.insight-stat span{font-family:'Playfair Display',serif;font-size:14px;color:var(--russet)}
+.wow-grid{display:grid;grid-template-columns:1fr 1fr 80px;gap:0;margin-top:4px}
+.wow-head{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe);padding:6px 0;border-bottom:1px solid var(--border);font-weight:500}
+.wow-row{display:contents}
+.wow-cell{padding:9px 0;border-bottom:1px solid rgba(180,168,155,.1);font-size:12px;color:var(--mid);display:flex;align-items:center}
+.wow-cell.val{font-family:'Playfair Display',serif;font-size:13px;color:var(--dark)}
+.wow-cell.ch{justify-content:center}
+.wow-badge{font-size:10px;font-weight:500;padding:2px 7px;border-radius:20px}
+.lead-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(180,168,155,.1)}
+.lead-item:last-child{border-bottom:none}
+.lead-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.li-retreat{background:rgba(78,110,88,.12)}.li-booking{background:rgba(24,119,242,.1)}.li-lead{background:rgba(160,96,0,.1)}
+.lead-sub{font-size:11px;color:var(--mid);font-weight:300;margin-top:2px;line-height:1.5}
+.lead-tag{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:2px 7px;border-radius:20px;margin-top:4px;display:inline-block}
+.lt-hot{background:rgba(146,74,59,.12);color:var(--russet)}.lt-warm{background:rgba(160,96,0,.1);color:#a06000}.lt-info{background:rgba(141,152,142,.15);color:var(--mid)}
+.yt-stat{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,0,0,.08)}
+.yt-stat:last-child{border-bottom:none}
+.yt-n{font-size:12px;color:var(--mid)}.yt-v{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark)}
+.yt-vid{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,0,0,.07)}
+.yt-vid:last-child{border-bottom:none}
+.yt-rank{font-family:'Playfair Display',serif;font-size:16px;color:rgba(255,0,0,.3);width:22px;flex-shrink:0}
+.yt-t{font-size:12px;font-weight:500;color:var(--dark)}.yt-m{font-size:11px;color:var(--mid);font-weight:300;margin-top:2px}
+.pl{display:flex;flex-direction:column;gap:10px}
+.pi{display:flex;gap:12px;align-items:flex-start}
+.pnum{width:22px;height:22px;border-radius:50%;background:var(--olive);color:#fff;font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pt{font-size:12px;color:var(--mid);line-height:1.65}.pa{display:inline-block;font-size:9px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--taupe);margin-top:3px}
+.rl{display:flex;flex-direction:column;gap:7px}
+.ri{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:8px;background:var(--light)}
+.rn2{font-size:12px;font-weight:500;color:var(--dark)}.rd{font-size:11px;color:var(--mid);font-weight:300}
+.badge{font-size:9px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:20px;text-decoration:none;display:inline-block}
+.blv{background:rgba(78,110,88,.12);color:var(--olive)}.bso{background:rgba(180,168,155,.2);color:var(--mid)}
+.footer{padding:16px 40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.fb2{font-family:'Playfair Display',serif;font-size:12px;color:var(--taupe);font-style:italic}
+.fn{font-size:10px;color:var(--stone);font-weight:300}
+@media(max-width:720px){.panel,.header,.strip,.footer,.tabs{padding-left:16px;padding-right:16px}.g3,.g2,.g21,.g12{grid-template-columns:1fr}.span2,.span3{grid-column:span 1}.sd{display:none}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div><div class="brand-name">Casavecchia</div><div class="brand-tag">Weekly Marketing Report</div></div>
+    </div>
+    <div class="week-label"><h1>Week of 20–26 April 2026</h1><p>Real data · IG · FB · YT · Gmail leads</p></div>
+  </div>
+</div>
+<div class="strip">
+  <div class="si"><span class="sn">856K</span><span class="sl">IG Total Reach</span></div>
+  <div class="sd"></div>
+  <div class="si"><span class="sn">9,016</span><span class="sl">IG Total Saves</span></div>
+  <div class="sd"></div>
+  <div class="si"><span class="sn">15,275</span><span class="sl">Follows Earned</span></div>
+  <div class="sd"></div>
+  <div class="si"><span class="sn">3.68M</span><span class="sl">FB Total Views</span></div>
+  <div class="sd"></div>
+  <div class="si"><span class="sn">65.7K</span><span class="sl">YT Total Views</span></div>
+  <div class="sd"></div>
+  <div class="si"><span class="sn">$83.21</span><span class="sl">FB Earnings to Date</span></div>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="showTab('overview',this)">📊 Overview</div>
+  <div class="tab" onclick="showTab('insights',this)">💡 Insights</div>
+  <div class="tab" onclick="showTab('comparison',this)">📈 Week vs Week</div>
+  <div class="tab" onclick="showTab('youtube',this)">▶️ YouTube</div>
+  <div class="tab" onclick="showTab('leads',this)">📩 Leads & Messages</div>
+</div>
+
+<!-- OVERVIEW -->
+<div id="tab-overview" class="panel active">
+<div class="grid g3">
+  <div class="card span2">
+    <div class="lbl">Instagram + Facebook — Week of Apr 20–26</div>
+    <div class="ttl">Social Performance</div>
+    <div class="sub">5 posts each platform · vs previous week Apr 13–18 (contained viral Nonno Reel)</div>
+    <div class="row"><div class="rn"><span class="dot dig"></span>Instagram reach</div><div style="display:flex;align-items:center;gap:10px"><div class="rv">23,135</div><span class="d dn">-86%</span></div></div>
+    <div class="row"><div class="rn"><span class="dot dig"></span>Instagram saves</div><div style="display:flex;align-items:center;gap:10px"><div class="rv">104</div><span class="d dn">-98%</span></div></div>
+    <div class="row"><div class="rn"><span class="dot dig"></span>New follows from posts</div><div style="display:flex;align-items:center;gap:10px"><div class="rv">71</div><span class="d dn">-99%</span></div></div>
+    <div class="row"><div class="rn"><span class="dot dfb"></span>Facebook reach</div><div style="display:flex;align-items:center;gap:10px"><div class="rv">41,637</div><span class="d dn">-82%</span></div></div>
+    <div class="row"><div class="rn"><span class="dot dfb"></span>Facebook views</div><div style="display:flex;align-items:center;gap:10px"><div class="rv">50,149</div><span class="d dn">-83%</span></div></div>
+    <div class="row"><div class="rn"><span class="dot dfb"></span>FB approx. earnings</div><div style="display:flex;align-items:center;gap:10px"><div class="rv">$1.31</div><span class="d fl">USD</span></div></div>
+    <div class="tp"><div class="tp-lbl">Top post this week</div><div class="tp-t">"We want your Tuscany words!"</div><div class="tp-m">IG Reel · Reach 8,376 · Saves 74 · Shares 502 · Fri 24 Apr</div></div>
+    <div class="note">Context: drops vs last week are entirely expected — Apr 13–18 contained the viral Nonno Reel (136K reach, 8,728 follows). <strong>Baseline weeks run 20–30K IG reach. This week is normal.</strong></div>
+  </div>
+  <div class="card">
+    <div class="lbl">META Monetisation</div>
+    <div class="ttl">Earning Metrics</div>
+    <div class="sub">Key metrics for payout eligibility</div>
+    <div class="row"><div class="rn">1-min view ratio (FB)</div><div style="display:flex;align-items:center;gap:8px"><div class="rv">2.0%</div><span class="d warn">vs 30% target</span></div></div>
+    <div class="row"><div class="rn">FB 1-min views</div><div class="rv">433</div></div>
+    <div class="row"><div class="rn">Shares per 1k views (IG)</div><div class="rv">18.7</div></div>
+    <div class="prog"><div class="prog-head"><span>1-min ratio toward 30%</span><span>6.7%</span></div><div class="prog-bg"><div class="prog-fill fill-russet" style="width:6.7%"></div></div><div class="prog-note">Best week: 22.8% (Apr 13, Nonno viral). Long-form 10min+ FB video is the only path to 30%.</div></div>
+  </div>
+  <div class="card">
+    <div class="lbl">Inbound — Gmail (this week)</div>
+    <div class="ttl">Lead Activity</div>
+    <div class="sub">Apr 20–26 · Classified from Gmail threads</div>
+    <div class="ig-grid">
+      <div class="ic"><div class="in">18+</div><div class="is">Retreat sequences</div></div>
+      <div class="ic"><div class="in">2</div><div class="is">Villa enquiries</div></div>
+      <div class="ic"><div class="in">3</div><div class="is">Booking.com msgs</div></div>
+      <div class="ic tot"><div class="in">23+</div><div class="is">Total leads</div></div>
+    </div>
+    <div class="note" style="margin-top:12px">Add Instagram DMs and Facebook messages manually from Missive each Saturday to complete the picture. See Leads tab for detail.</div>
+  </div>
+  <div class="card">
+    <div class="lbl">YouTube — April 2026</div>
+    <div class="ttl">Channel Snapshot</div>
+    <div class="sub">14 videos published · 25.1h watch time</div>
+    <div class="row"><div class="rn"><span class="dot dyt"></span>April views</div><div class="rv">7,519</div></div>
+    <div class="row"><div class="rn"><span class="dot dyt"></span>Subscribers (total)</div><div style="display:flex;align-items:center;gap:8px"><div class="rv">222</div><span class="d warn">Need 778</span></div></div>
+    <div class="prog"><div class="prog-head"><span>Subs to YPP threshold (1,000)</span><span>22%</span></div><div class="prog-bg"><div class="prog-fill fill-yt" style="width:22%"></div></div><div class="prog-note">Watch hours: 178h of 4,000 needed (4.5%). See YouTube tab for full roadmap.</div></div>
+  </div>
+  <div class="card span2">
+    <div class="lbl">Team Priorities — Week of Apr 27</div>
+    <div class="ttl">3 Actions This Week</div>
+    <div class="sub">For Keli and Thomas · Based on data</div>
+    <div class="pl">
+      <div class="pi"><div class="pnum">1</div><div><div class="pt">Plan the next Nonno video now. 2 of your top 4 all-time posts are Nonno — 62% of your total reach from 2 videos. Script it and film before Thomas leaves Jun 8.</div><span class="pa">Filippo + Thomas · this week</span></div></div>
+      <div class="pi"><div class="pnum">2</div><div><div class="pt">Promote May 16–23 retreat using the "People often arrive a little tired" format — that Reel drove 258 follows from 17K reach. Update WeTravel link in bio.</div><span class="pa">Keli · due Wednesday</span></div></div>
+      <div class="pi"><div class="pnum">3</div><div><div class="pt">Post one Facebook video of 10+ minutes. The 1-min view ratio (2%) is the META monetisation blocker — only longer content moves this meaningfully toward the 30% threshold.</div><span class="pa">Thomas · this sprint</span></div></div>
+    </div>
+  </div>
+  <div class="card span3">
+    <div class="lbl">2027 Retreat Calendar</div>
+    <div class="ttl">Live Booking Status — All Dates & WeTravel Links</div>
+    <div class="sub">4 retreats live · 3 launching later</div>
+    <div class="rl">
+      <div class="ri"><div><div class="rn2">CV May (1)</div><div class="rd">9–16 May 2027</div></div><span class="badge bso">Launch later</span></div>
+      <div class="ri"><div><div class="rn2">CV May (2)</div><div class="rd">16–23 May 2027</div></div><a class="badge blv" href="https://www.wetravel.com/trips/the-casavecchia-retreat-may-16-23-2027-villa-casavecchia-casavecchiavillas-6555800548" target="_blank">Live — Book now</a></div>
+      <div class="ri"><div><div class="rn2">CV June (1)</div><div class="rd">5–12 June 2027</div></div><a class="badge blv" href="https://www.wetravel.com/trips/the-casavecchia-retreat-june-5-12-villa-casavecchia-casavecchiavillas-9208300591" target="_blank">Live — Book now</a></div>
+      <div class="ri"><div><div class="rn2">CV Sept. (1)</div><div class="rd">12–19 September 2027</div></div><a class="badge blv" href="https://www.wetravel.com/trips/the-casavecchia-retreat-sept-12-19-2027-villa-casavecchia-casavecchiavillas-1899476388" target="_blank">Live — Book now</a></div>
+      <div class="ri"><div><div class="rn2">CV Sept. (2)</div><div class="rd">19–26 September 2027</div></div><span class="badge bso">Launch later</span></div>
+      <div class="ri"><div><div class="rn2">CV Oct. (1)</div><div class="rd">3–10 October 2027</div></div><a class="badge blv" href="https://www.wetravel.com/trips/the-casavecchia-retreat-oct-3-10-2027-villa-casavecchia-casavecchiavillas-7464379313" target="_blank">Live — Book now</a></div>
+      <div class="ri"><div><div class="rn2">CV Oct. (2)</div><div class="rd">10–17 October 2027</div></div><span class="badge bso">Launch later</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- INSIGHTS -->
+<div id="tab-insights" class="panel">
+<div class="grid g12">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div class="card">
+      <div class="insight-block">
+        <span class="insight-tag tag-critical">🔑 Most Important</span>
+        <div class="insight-title">Nonno is your entire content engine</div>
+        <div class="insight-body">Two Nonno videos account for <strong>527,712 of your 856,122 total Instagram reach</strong> — that's 62% of your entire 3-month reach from just 2 posts out of 63. Every other post combined generated 38% of what Nonno generated alone. This is a repeatable formula: authentic family character + long-form storytelling + a genuine moment of wisdom. The next Nonno video should be in production this week.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:10px">
+          <div class="insight-stat"><span>390K</span>reach — Feb 22</div>
+          <div class="insight-stat"><span>136K</span>reach — Apr 19</div>
+          <div class="insight-stat"><span>8,728</span>follows from Apr 19</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="insight-block">
+        <span class="insight-tag tag-opportunity">📈 Big Opportunity</span>
+        <div class="insight-title">Your email pipeline is more active than it looks</div>
+        <div class="insight-body">From Gmail alone, you sent or received <strong>23+ distinct retreat and booking conversations in a single day</strong> (Apr 26). The pipeline includes active email sequences, Pipedrive deal assignments, Chatbase daily leads, and Manychat escalations. You likely have 50–80 active leads at any given moment. The missing metric: conversion rate from itinerary download to retreat booking. That number would transform how you manage the pipeline.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="insight-block">
+        <span class="insight-tag tag-warning">⚠️ Monetisation Gap</span>
+        <div class="insight-title">META earnings are real but tiny — here's exactly how to fix it</div>
+        <div class="insight-body">Total Facebook earnings: <strong>$83.21 USD since January</strong>. The pipeline is confirmed active. The problem is 1-min view ratio at 2% against a 30% threshold. Your best week hit 22.8% — driven by the Nonno Reel (105 seconds) and "People often arrive tired" (64 seconds). The fix: publish at least one 3–10 minute video per week on Facebook specifically. The algorithm treats long-form Facebook videos entirely differently from Instagram Reels.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:10px">
+          <div class="insight-stat"><span>22.8%</span>best 1-min ratio</div>
+          <div class="insight-stat"><span>2.0%</span>this week</div>
+          <div class="insight-stat"><span>30%</span>META threshold</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div class="card">
+      <div class="insight-block">
+        <span class="insight-tag tag-info">📊 Channel Health</span>
+        <div class="insight-title">Saves and follows matter more than reach</div>
+        <div class="insight-body">856K reach sounds impressive, but reach without saves and follows is entertainment. Your <strong>9,016 total saves and 15,275 follows from posts</strong> tell the more important story — people aren't just watching, they're keeping your content and following you for more. Saves are the clearest signal of deep resonance. The "Stories Behind the Cracks," "6 Things No One Tells You," and retreat announcements are your best save-generators. Build more of those.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="insight-block">
+        <span class="insight-tag tag-opportunity">▶️ YouTube Path</span>
+        <div class="insight-title">YouTube is 15 months away at current pace — but one video could change that</div>
+        <div class="insight-body">At April's pace (25 watch hours/month), you'd reach the 4,000-hour threshold in approximately 15 months. However, one well-produced 20-minute documentary video that performs well could generate 200–400 watch hours in a single week. Your top YouTube video has <strong>100% average view completion</strong> — people watch every second. A full Nonno day, an olive harvest documentary, or a "one week at Casavecchia" guest journey would be the accelerant.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:10px">
+          <div class="insight-stat"><span>4,000h</span>needed</div>
+          <div class="insight-stat"><span>178h</span>earned</div>
+          <div class="insight-stat"><span>~15mo</span>at current pace</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="insight-block">
+        <span class="insight-tag tag-info">🗓️ Seasonal Pattern</span>
+        <div class="insight-title">February was your breakout month — replicate the conditions</div>
+        <div class="insight-body">February generated your two biggest viral posts and your highest-earning week. Both had: long-form storytelling, a genuine emotional reveal, and a clear hook in the first 3 seconds. April's Nonno Reel (136K reach) proves the formula still works. As September approaches, a well-timed retreat announcement could be your next breakout. The retreat announcement format reliably generates reach spikes — use it deliberately for September and October launches.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- WEEK VS WEEK -->
+<div id="tab-comparison" class="panel">
+<div class="grid g3">
+  <div class="card span3">
+    <div class="lbl">13-Week Performance — Instagram Reach</div>
+    <div class="ttl">Week-on-Week Reach Trend</div>
+    <div class="sub">Jan 26 – Apr 26 2026 · Red = viral weeks · Green = current week</div>
+    <div class="bars" style="height:70px">
+      <div class="b" style="height:3%"></div>
+      <div class="b hi" style="height:21%"></div>
+      <div class="b" style="height:6%"></div>
+      <div class="b hi" style="height:100%"></div>
+      <div class="b" style="height:3%"></div>
+      <div class="b" style="height:2%"></div>
+      <div class="b" style="height:3%"></div>
+      <div class="b" style="height:6%"></div>
+      <div class="b" style="height:7%"></div>
+      <div class="b" style="height:5%"></div>
+      <div class="b" style="height:7%"></div>
+      <div class="b hi" style="height:42%"></div>
+      <div class="b cur" style="height:6%"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:4px;font-size:9px;color:var(--taupe)"><span>Jan 26</span><span>Feb 16 🔥 (404K)</span><span>Apr 13 🔥 (169K)</span><span>Apr 26 (23K)</span></div>
+  </div>
+  <div class="card span3">
+    <div class="lbl">Full 13-Week Table — Instagram</div>
+    <div class="ttl">Week-on-Week Comparison</div>
+    <div class="sub">All metrics from your Instagram CSV export</div>
+    <div class="wow-grid">
+      <div class="wow-head">Week</div><div class="wow-head">IG Reach · Saves · Follows</div><div class="wow-head" style="text-align:center">vs prev</div>
+      <div class="wow-row"><div class="wow-cell">Jan 26–31</div><div class="wow-cell val">11,231 · 29 saves · 19 follows</div><div class="wow-cell ch">—</div></div>
+      <div class="wow-row"><div class="wow-cell">Feb 2–7</div><div class="wow-cell val">84,895 · 1,177 saves · 2,147 follows</div><div class="wow-cell ch"><span class="wow-badge up">+656%</span></div></div>
+      <div class="wow-row"><div class="wow-cell">Feb 9–14</div><div class="wow-cell val">22,648 · 119 saves · 72 follows</div><div class="wow-cell ch"><span class="wow-badge dn">-73%</span></div></div>
+      <div class="wow-row"><div class="wow-cell" style="color:var(--russet);font-weight:500">Feb 16–21 🔥</div><div class="wow-cell val" style="color:var(--dark);font-weight:500">404,974 · 2,721 saves · 3,553 follows</div><div class="wow-cell ch"><span class="wow-badge up">+1,688%</span></div></div>
+      <div class="wow-row"><div class="wow-cell">Feb 23–28</div><div class="wow-cell val">10,989 · 56 saves · 33 follows</div><div class="wow-cell ch"><span class="wow-badge dn">-97%</span></div></div>
+      <div class="wow-row"><div class="wow-cell">Mar 2–7</div><div class="wow-cell val">9,319 · 29 saves · 13 follows</div><div class="wow-cell ch"><span class="wow-badge dn">-15%</span></div></div>
+      <div class="wow-row"><div class="wow-cell">Mar 9–14</div><div class="wow-cell val">14,059 · 22 saves · 29 follows</div><div class="wow-cell ch"><span class="wow-badge up">+51%</span></div></div>
+      <div class="wow-row"><div class="wow-cell">Mar 16–21</div><div class="wow-cell val">23,961 · 88 saves · 39 follows</div><div class="wow-cell ch"><span class="wow-badge up">+70%</span></div></div>
+      <div class="wow-row"><div class="wow-cell">Mar 23–28</div><div class="wow-cell val">29,026 · 151 saves · 76 follows</div><div class="wow-cell ch"><span class="wow-badge up">+21%</span></div></div>
+      <div class="wow-row"><div class="wow-cell">Mar 30–Apr 4</div><div class="wow-cell val">21,189 · 92 saves · 66 follows</div><div class="wow-cell ch"><span class="wow-badge dn">-27%</span></div></div>
+      <div class="wow-row"><div class="wow-cell">Apr 6–11</div><div class="wow-cell val">26,757 · 193 saves · 102 follows</div><div class="wow-cell ch"><span class="wow-badge up">+26%</span></div></div>
+      <div class="wow-row"><div class="wow-cell" style="color:var(--russet);font-weight:500">Apr 13–18 🔥</div><div class="wow-cell val" style="color:var(--dark);font-weight:500">169,848 · 4,214 saves · 9,049 follows</div><div class="wow-cell ch"><span class="wow-badge up">+535%</span></div></div>
+      <div class="wow-row"><div class="wow-cell" style="font-weight:500">Apr 20–26 ← now</div><div class="wow-cell val">23,135 · 104 saves · 71 follows</div><div class="wow-cell ch"><span class="wow-badge dn">-86%</span></div></div>
+    </div>
+    <div class="note" style="margin-top:14px">The -86% and -97% weeks after viral spikes are <strong>entirely normal</strong> — they represent the return to baseline after an outlier. The meaningful trend is steady improvement from Mar 2 (9K) through Apr 11 (26K) before the second Nonno spike. <strong>Baseline is growing.</strong></div>
+  </div>
+  <div class="card span3">
+    <div class="lbl">Month-on-Month — Facebook</div>
+    <div class="ttl">FB Views & Earnings by Month</div>
+    <div class="sub">Facebook is your primary monetisation channel</div>
+    <div class="wow-grid">
+      <div class="wow-head">Month</div><div class="wow-head">FB Views · Reach · Earnings USD</div><div class="wow-head" style="text-align:center">Trend</div>
+      <div class="wow-row"><div class="wow-cell">Jan 26–31</div><div class="wow-cell val">110,252 views · 83,865 reach · $0.41</div><div class="wow-cell ch">—</div></div>
+      <div class="wow-row"><div class="wow-cell">February</div><div class="wow-cell val">1,820,765 views · 1,398,330 reach · $8.01</div><div class="wow-cell ch"><span class="wow-badge up">↑↑↑</span></div></div>
+      <div class="wow-row"><div class="wow-cell">March</div><div class="wow-cell val">920,045 views · 730,467 reach · $12.73</div><div class="wow-cell ch"><span class="wow-badge fl">steady</span></div></div>
+      <div class="wow-row"><div class="wow-cell" style="font-weight:500">April (to 26)</div><div class="wow-cell val" style="color:var(--dark);font-weight:500">655,832 views · 519,575 reach · $62.06</div><div class="wow-cell ch"><span class="wow-badge up">↑ earnings</span></div></div>
+    </div>
+    <div class="note amber" style="margin-top:12px"><strong>April earnings ($62.06):</strong> The Apr 13–18 week alone generated $52.80 — driven by the viral Nonno Reel producing 22.8% 1-min view ratio. This confirms the formula: long-form storytelling that retains past 1 minute = earnings spike. <strong>This is repeatable.</strong></div>
+  </div>
+</div>
+</div>
+
+<!-- YOUTUBE -->
+<div id="tab-youtube" class="panel">
+<div class="grid g3">
+  <div class="card yt-card">
+    <div class="lbl">YouTube Partner Programme</div>
+    <div class="ttl">Monetisation Status</div>
+    <div class="sub">Both thresholds must be met simultaneously</div>
+    <div class="yt-stat"><div class="yt-n">Current subscribers</div><div style="display:flex;align-items:center;gap:8px"><div class="yt-v">222</div><span class="d warn">Need 778 more</span></div></div>
+    <div class="yt-stat"><div class="yt-n">Watch hours (12 months)</div><div style="display:flex;align-items:center;gap:8px"><div class="yt-v">178h</div><span class="d warn">Need 3,822h</span></div></div>
+    <div class="yt-stat"><div class="yt-n">Total channel views</div><div class="yt-v">65,690</div></div>
+    <div class="yt-stat"><div class="yt-n">Total videos published</div><div class="yt-v">144</div></div>
+    <div class="yt-stat"><div class="yt-n">Total likes</div><div class="yt-v">1,038</div></div>
+    <div class="prog" style="margin-top:12px"><div class="prog-head"><span>Subscribers (need 1,000)</span><span>22.2%</span></div><div class="prog-bg"><div class="prog-fill fill-yt" style="width:22.2%"></div></div></div>
+    <div class="prog"><div class="prog-head"><span>Watch hours (need 4,000h)</span><span>4.5%</span></div><div class="prog-bg"><div class="prog-fill fill-yt" style="width:4.5%"></div></div></div>
+    <div class="note red" style="margin-top:12px"><strong>Watch hours is the binding constraint.</strong> At April's pace (25h/month), you'd reach 4,000h in ~15 months. One 20-minute documentary could generate 300–500h in a week.</div>
+  </div>
+  <div class="card yt-card span2">
+    <div class="lbl">Top 10 Videos by Views — All Time</div>
+    <div class="ttl">What's Working on YouTube</div>
+    <div class="sub">144 videos tracked · May 2024 – Apr 2026</div>
+    <div class="yt-vid"><div class="yt-rank">1</div><div><div class="yt-t">Visit Tuscany</div><div class="yt-m">2,061 views · 100% avg completion · 14s · May 2025</div></div></div>
+    <div class="yt-vid"><div class="yt-rank">2</div><div><div class="yt-t">How to make Pasta like an Italian Grandma</div><div class="yt-m">1,970 views · 34.5% completion · Jun 2025</div></div></div>
+    <div class="yt-vid"><div class="yt-rank">3</div><div><div class="yt-t">The best spot in the world...</div><div class="yt-m">1,819 views · 7s · Feb 2026</div></div></div>
+    <div class="yt-vid"><div class="yt-rank">4</div><div><div class="yt-t">Our mornings here...</div><div class="yt-m">1,647 views · 64.5% completion · 30s · Apr 2026</div></div></div>
+    <div class="yt-vid"><div class="yt-rank">5</div><div><div class="yt-t">When did you last do something for you?</div><div class="yt-m">1,643 views · 41.9% completion · Feb 2026</div></div></div>
+    <div class="yt-vid"><div class="yt-rank">6</div><div><div class="yt-t">What's included in our Tuscan retreat?</div><div class="yt-m">1,551 views · 66.1% completion · 20s · Feb 2026</div></div></div>
+    <div class="yt-vid"><div class="yt-rank">7</div><div><div class="yt-t">Alone but not lonely in Tuscany</div><div class="yt-m">1,480 views · 61.9% completion · Aug 2025</div></div></div>
+    <div class="yt-vid"><div class="yt-rank">8</div><div><div class="yt-t">The most underrated time to visit Tuscany</div><div class="yt-m">1,453 views · 80.3% completion · 34s · Nov 2025</div></div></div>
+    <div class="yt-vid"><div class="yt-rank">9</div><div><div class="yt-t">The quiet shift</div><div class="yt-m">1,372 views · 63.3% completion · 16s · Apr 2026</div></div></div>
+    <div class="yt-vid"><div class="yt-rank">10</div><div><div class="yt-t">6 Things No One Tells You about running a Tuscan villa</div><div class="yt-m">1,327 views · 71.6% completion · Nov 2025</div></div></div>
+  </div>
+  <div class="card span3">
+    <div class="lbl">YouTube Monetisation Roadmap</div>
+    <div class="ttl">How to Reach YouTube Partner Programme — Fastest Path</div>
+    <div class="sub">Based on your content style, audience, and current metrics</div>
+    <div class="grid g3" style="margin-top:4px;gap:14px">
+      <div style="padding:14px;background:var(--light);border-radius:10px;border-left:3px solid var(--yt)">
+        <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--yt);margin-bottom:8px">Step 1 — Subscribers (778 needed)</div>
+        <div style="font-size:12px;color:var(--mid);line-height:1.7">Cross-promote your YouTube channel in every Instagram Reel. Add "subscribe on YouTube" to your bio link, Linktree, and email sequences. Your Instagram audience converts at far higher rates than cold YouTube discovery. Target: 50 new subs/week = 16 weeks to 1,000.</div>
+      </div>
+      <div style="padding:14px;background:var(--light);border-radius:10px;border-left:3px solid var(--yt)">
+        <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--yt);margin-bottom:8px">Step 2 — Watch Hours (3,822h needed)</div>
+        <div style="font-size:12px;color:var(--mid);line-height:1.7">One 20-minute documentary video with strong retention could generate 500+ watch hours. High-potential ideas: a full Nonno day from dawn to dinner, a complete olive harvest documentary, or a "one week at Casavecchia" guest journey. Depth over frequency.</div>
+      </div>
+      <div style="padding:14px;background:var(--light);border-radius:10px;border-left:3px solid var(--yt)">
+        <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--yt);margin-bottom:8px">Step 3 — Revenue Streams</div>
+        <div style="font-size:12px;color:var(--mid);line-height:1.7">Once monetised: ad revenue (~$3–8 per 1k views), channel memberships, Super Thanks, and YouTube Shopping (link olive oil directly from videos). More valuable: use YouTube as the long-form engine that drives retreat bookings — one well-placed CTA in a 20-min video can outperform any ad.</div>
+      </div>
+    </div>
+    <div class="note" style="margin-top:14px"><strong>Alert this week:</strong> YouTube blocked a Short for copyright music (Apr 26). Always use YouTube Audio Library or Epidemic Sound tracks. Thomas should audit all scheduled Shorts for background music before publishing.</div>
+  </div>
+</div>
+</div>
+
+<!-- LEADS -->
+<div id="tab-leads" class="panel">
+<div class="grid g21">
+  <div class="card">
+    <div class="lbl">Lead Pipeline — Week of Apr 20–26</div>
+    <div class="ttl">Active Conversations from Gmail</div>
+    <div class="sub">Classified from real email threads · Add Instagram DMs + Facebook messages from Missive manually each Saturday</div>
+    <div class="lead-item">
+      <div class="lead-icon li-retreat">🏕️</div>
+      <div class="lead-body"><strong style="font-size:12px;color:var(--dark)">Retreat booking sequences — 15+ active leads</strong><div class="lead-sub">Active "Ready to save your spot?" and "What our guests say" email threads running simultaneously to: jmbutler4, dks1420, blumoon9rco, easmith3229, papapia, koskondy, bee.edwards, ranallosandra, mariabrutis1125, lmkny7, and more. Pipeline is working.</div><span class="lead-tag lt-hot">Active pipeline</span></div>
+    </div>
+    <div class="lead-item">
+      <div class="lead-icon li-booking">🏠</div>
+      <div class="lead-body"><strong style="font-size:12px;color:var(--dark)">Shamik — La Torre, May 21–26</strong><div class="lead-sub">Inbound enquiry about La Torre. Asking about cancellable rates. Filippo replied, Shamik confirmed dates. Hot qualified buyer — main friction is cancellation policy flexibility.</div><span class="lead-tag lt-hot">🔥 Follow up today</span></div>
+    </div>
+    <div class="lead-item">
+      <div class="lead-icon li-booking">📅</div>
+      <div class="lead-body"><strong style="font-size:12px;color:var(--dark)">John Louise — Booking.com (arriving soon)</strong><div class="lead-sub">Existing booking via Booking.com. Asked about air conditioning — confirmed and resolved. Flag for pre-arrival welcome message.</div><span class="lead-tag lt-info">Existing booking</span></div>
+    </div>
+    <div class="lead-item">
+      <div class="lead-icon li-retreat">🌿</div>
+      <div class="lead-body"><strong style="font-size:12px;color:var(--dark)">levesque.j.n — Interested but planning for 2030</strong><div class="lead-sub">Replied to sequence. Planning a 2–3 week Tuscany trip for 2030. Long-term high-value lead — acknowledge warmly, add to low-frequency newsletter, no pressure.</div><span class="lead-tag lt-warm">Long-term nurture</span></div>
+    </div>
+    <div class="lead-item">
+      <div class="lead-icon li-retreat">💚</div>
+      <div class="lead-body"><strong style="font-size:12px;color:var(--dark)">Rohanna — GUC Wellness Retreat payment overdue</strong><div class="lead-sub">B2B retreat organiser. March payment missed. Confirmed payment by May 7. Monitor — escalate if not received.</div><span class="lead-tag lt-warm">⚠️ Monitor payment</span></div>
+    </div>
+    <div class="lead-item">
+      <div class="lead-icon li-lead">🤖</div>
+      <div class="lead-body"><strong style="font-size:12px;color:var(--dark)">Chatbase daily leads + Manychat escalation</strong><div class="lead-sub">Chatbase sending daily lead digest to filippo.roselli@. 1 Manychat conversation assigned on Apr 26 requiring manual response. Check Manychat today.</div><span class="lead-tag lt-hot">Action needed</span></div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div class="card olive">
+      <div class="lbl">How to Add Missive Data Each Saturday</div>
+      <div class="ttl">Completing the Inbound Picture</div>
+      <div class="sub">Missive holds your Instagram DMs and Facebook messages — the two channels currently missing from this report</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
+        <div style="display:flex;gap:10px;align-items:flex-start"><div style="width:22px;height:22px;border-radius:50%;background:var(--olive);color:#fff;font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div><div style="font-size:12px;color:var(--mid);line-height:1.6">Open Missive each Saturday. Filter conversations by <strong style="color:var(--dark)">Date: this week</strong>. Count conversations where source = <strong style="color:var(--dark)">Instagram</strong>.</div></div>
+        <div style="display:flex;gap:10px;align-items:flex-start"><div style="width:22px;height:22px;border-radius:50%;background:var(--olive);color:#fff;font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div><div style="font-size:12px;color:var(--mid);line-height:1.6">Repeat for <strong style="color:var(--dark)">Facebook</strong> messages. These are your two missing channels for the weekly report.</div></div>
+        <div style="display:flex;gap:10px;align-items:flex-start"><div style="width:22px;height:22px;border-radius:50%;background:var(--olive);color:#fff;font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div><div style="font-size:12px;color:var(--mid);line-height:1.6">Add both counts to the <a href="https://docs.google.com/spreadsheets/d/1tgafe7jQ62qsmqQnuIubKG3GNEV5qk5a4CDI_r7fH5k" target="_blank" style="color:var(--olive)">META Data Tracker Google Sheet</a> in the IG DMs and FB Messages columns.</div></div>
+        <div style="display:flex;gap:10px;align-items:flex-start"><div style="width:22px;height:22px;border-radius:50%;background:var(--olive);color:#fff;font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</div><div style="font-size:12px;color:var(--mid);line-height:1.6">Once you activate Missive's Claude integration (Settings → Integrations → Anthropic → add API key), create an AI Rule that tags every inbound conversation: Retreat / Villa / Olive Oil / B2B. Weekly count becomes instant — just filter by tag.</div></div>
+      </div>
+      <div class="note" style="margin-top:12px">The Missive Claude AI Rule is the upgrade that makes manual counting unnecessary. It classifies every message on arrival. Takes about 15 minutes to configure once your API key is connected.</div>
+    </div>
+    <div class="card muted">
+      <div class="lbl">Pipeline Intelligence</div>
+      <div class="ttl">What This Week's Data Tells Us</div>
+      <div class="sub">Patterns from the Gmail thread analysis</div>
+      <div style="font-size:12px;color:var(--mid);line-height:1.8">
+        <p style="margin-bottom:8px">Your email sequences are running to <strong style="color:var(--dark)">15+ unique leads simultaneously</strong>. That's a mature, systematised pipeline — most small hospitality businesses don't have this. The Pipedrive + sequence automation is delivering volume.</p>
+        <p style="margin-bottom:8px">The <strong style="color:var(--dark)">Shamik enquiry</strong> (La Torre, May 21–26, asking about flexibility) is the highest-priority unconverted lead this week. He's warm, has specific dates, came inbound — a qualified buyer with one friction point (cancellation policy). A personal, empathetic response from Filippo today has high conversion probability.</p>
+        <p>The <strong style="color:var(--dark)">levesque 2030 lead</strong> is valuable — someone planning a 2–3 week Tuscany trip 4 years out is exactly the engaged, high-intent traveller who books Casavecchia. Add to a low-frequency nurture sequence, not the standard retreat pipeline.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="footer">
+  <div class="fb2">Casavecchia — Your Home in Tuscany</div>
+  <div class="fn">CMO Agent · IG + FB + YouTube + Gmail · Week of 20–26 Apr 2026 · villacasavecchia.com</div>
+</div>
+
+<script>
+function showTab(id, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
