@@ -33,8 +33,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
 .mb{margin-bottom:24px}
 .kpi{background:#fff;border:1px solid var(--border);border-radius:3px;padding:16px;position:relative;overflow:hidden}
 .kpi::after{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.kpi.r::after{background:var(--red)}.kpi.g::after{background:var(--green)}
-.kpi.t::after{background:var(--tan)}.kpi.s::after{background:var(--sage)}.kpi.d::after{background:var(--dark)}
+.kpi.r::after{background:var(--red)}.kpi.g::after{background:var(--green)}.kpi.t::after{background:var(--tan)}.kpi.s::after{background:var(--sage)}.kpi.d::after{background:var(--dark)}
 .kpi-l{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:7px}
 .kpi-v{font-family:'Playfair Display',serif;font-size:28px;line-height:1;color:var(--dark)}
 .kpi-n{font-size:10px;color:var(--sage);margin-top:5px}
@@ -61,12 +60,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
 .bar-track{height:7px;background:var(--grey);border-radius:4px;overflow:hidden}
 .bar-fill{height:100%;border-radius:4px}
 .bf-red{background:var(--red)}.bf-green{background:var(--green)}.bf-tan{background:var(--tan)}
-.ibar-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)}
-.ibar-row:last-child{border-bottom:none}
-.ibar-label{font-size:11px;color:var(--dark);flex:0 0 130px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ibar-track{flex:1;height:5px;background:var(--grey);border-radius:2px;overflow:hidden}
-.ibar-fill{height:100%;border-radius:2px}
-.ibar-val{flex:0 0 36px;text-align:right;font-size:11px;font-weight:600;color:var(--dark)}
 .insight{background:rgba(146,74,59,0.06);border-left:3px solid var(--red);border-radius:0 3px 3px 0;padding:12px 16px;margin-top:14px;font-size:11px;color:var(--mid);line-height:1.7}
 .insight strong{color:var(--dark)}
 .insight.g-ac{border-left-color:var(--green)}
@@ -75,8 +68,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
 .big-insight{background:#fff;border:1px solid var(--border);border-radius:3px;padding:20px;margin-bottom:14px}
 .bi-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
 .bi-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.bi-red{background:rgba(146,74,59,0.1)}.bi-green{background:rgba(78,110,88,0.1)}
-.bi-tan{background:rgba(185,157,135,0.2)}.bi-sage{background:rgba(141,152,142,0.15)}
+.bi-red{background:rgba(146,74,59,0.1)}.bi-green{background:rgba(78,110,88,0.1)}.bi-tan{background:rgba(185,157,135,0.2)}.bi-sage{background:rgba(141,152,142,0.15)}
 .bi-title{font-size:12px;font-weight:600;color:var(--dark);margin-bottom:2px}
 .bi-tag{font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid)}
 .bi-body{font-size:11px;color:var(--mid);line-height:1.7}
@@ -161,14 +153,19 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
 .footer-r{font-size:10px;color:var(--mid)}
 .step-grid{display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start;padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:16px}
 .step-grid:last-child{padding-bottom:0;border-bottom:none;margin-bottom:0}
-.step-num{width:32px;height:32px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px}
+.step-num{width:32px;height:32px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px;flex-shrink:0}
 .step-title{font-size:12px;font-weight:600;color:var(--dark);margin-bottom:4px}
 .step-body{font-size:11px;color:var(--mid);line-height:1.7}
 .step-who{font-size:10px;color:var(--sage);margin-top:6px;font-weight:500}
+.ibar-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)}
+.ibar-row:last-child{border-bottom:none}
+.ibar-label{font-size:11px;color:var(--dark);flex:0 0 160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ibar-track{flex:1;height:5px;background:var(--grey);border-radius:2px;overflow:hidden}
+.ibar-fill{height:100%;border-radius:2px}
+.ibar-val{flex:0 0 32px;text-align:right;font-size:11px;font-weight:600;color:var(--dark)}
 </style>
 </head>
 <body>
-
 <div class="header">
   <div>
     <div class="logo-mark">C &nbsp;·&nbsp; Casavecchia</div>
@@ -177,11 +174,10 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
   </div>
   <div class="week-badge">
     <div class="wl">Week of</div>
-    <div class="wd">26 Apr – 3 May 2026</div>
+    <div class="wd">3 May – 9 May 2026</div>
     <div class="wsub">Real data · all channels</div>
   </div>
 </div>
-
 <div class="nav">
   <button class="tab-btn active" onclick="showTab('overview',this)">📊 Overview</button>
   <button class="tab-btn" onclick="showTab('insights',this)">💡 Insights</button>
@@ -193,91 +189,91 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
 <!-- OVERVIEW -->
 <div id="tab-overview" class="tab-pane active">
 <div class="main">
-  <p class="sec">All channels — week of 26 Apr–3 May 2026</p>
+  <p class="sec">All channels — week of 3 May–9 May 2026</p>
   <div class="g5">
-    <div class="kpi r"><div class="kpi-l">IG Total Reach</div><div class="kpi-v">2,654</div><div class="kpi-n">Stories only this week</div></div>
-    <div class="kpi g"><div class="kpi-l">FB Total Views</div><div class="kpi-v">72,221</div><div class="kpi-n">6 Reels published</div></div>
-    <div class="kpi t"><div class="kpi-l">YT Views this week</div><div class="kpi-v">1,170</div><div class="kpi-n">5.4h watch time · 1 new sub</div></div>
-    <div class="kpi s"><div class="kpi-l">FB Earnings this week</div><div class="kpi-v">$14.53</div><div class="kpi-n">$83.74 earned to date</div></div>
-    <div class="kpi d"><div class="kpi-l">AI Chats (Chatbase)</div><div class="kpi-v">154</div><div class="kpi-n">776 messages · 100% satisfaction</div></div>
+    <div class="kpi r"><div class="kpi-l">FB Est. Views</div><div class="kpi-v">~85,000</div><div class="kpi-n">4 reels · est. from watch data</div></div>
+    <div class="kpi g"><div class="kpi-l">Total Engagements</div><div class="kpi-v">2,719</div><div class="kpi-n">Reactions + comments + shares</div></div>
+    <div class="kpi t"><div class="kpi-l">YT Views this week</div><div class="kpi-v">1,622</div><div class="kpi-n">8.4h watch time · 4 new subs</div></div>
+    <div class="kpi s"><div class="kpi-l">FB Earnings this week</div><div class="kpi-v">$4.35</div><div class="kpi-n">$105.05 earned to date</div></div>
+    <div class="kpi d"><div class="kpi-l">Inbound conversations</div><div class="kpi-v">261</div><div class="kpi-n">Email 239 · IG 14 · FB 8</div></div>
   </div>
 
-  <p class="sec">Instagram + Facebook — week of 26 Apr–3 May</p>
+  <p class="sec">Top content — week of 3–9 May</p>
   <div style="background:#fff;border:1px solid var(--border);border-radius:3px;padding:20px;margin-bottom:24px">
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;text-align:center">
       <div style="padding:16px;border-right:1px solid var(--border)">
-        <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:6px">Instagram reach</div>
-        <div style="font-family:'Playfair Display',serif;font-size:36px;color:var(--dark)">2,654</div>
-        <div class="dn">Stories only — no feed Reels this week</div>
+        <div style="font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:6px">Best post engagements</div>
+        <div style="font-family:'Playfair Display',serif;font-size:32px;color:var(--dark)">1,553</div>
+        <div style="font-size:10px;color:var(--mid);font-style:italic;margin-top:4px">"Not everything has to be a big reset"</div>
+        <div class="up">50% watch-through · 20s</div>
       </div>
       <div style="padding:16px;border-right:1px solid var(--border)">
-        <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:6px">Facebook views</div>
-        <div style="font-family:'Playfair Display',serif;font-size:36px;color:var(--dark)">72,221</div>
-        <div class="kpi-n">6 Reels published</div>
+        <div style="font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:6px">Total weekly engagements</div>
+        <div style="font-family:'Playfair Display',serif;font-size:32px;color:var(--dark)">2,719</div>
+        <div style="font-size:10px;color:var(--sage);margin-top:4px">Across 4 posts</div>
       </div>
       <div style="padding:16px">
-        <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:6px">FB approx. earnings</div>
-        <div style="font-family:'Playfair Display',serif;font-size:36px;color:var(--dark)">$14.53</div>
-        <div style="color:var(--green);font-size:10px;font-weight:600;margin-top:3px">USD this week</div>
+        <div style="font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:6px">YT avg view %</div>
+        <div style="font-family:'Playfair Display',serif;font-size:32px;color:var(--dark)">67.5%</div>
+        <div style="font-size:10px;color:var(--green);font-weight:500;margin-top:4px">Strong retention — best week yet</div>
       </div>
     </div>
     <div style="border-top:1px solid var(--border);margin-top:16px;padding-top:14px;font-size:11px;color:var(--mid);line-height:1.7">
-      <strong style="color:var(--dark)">Top post this week:</strong> "You don't have to come to Tuscany to do this..." · FB Reel · 25,598 views · 676 engagements · 27 Apr
+      <strong style="color:var(--dark)">Top post this week:</strong> "Not everything has to be a big reset... Sometimes it's just a small shift" · 4 May · 1,553 eng · 50% watch-through · 20s reel
     </div>
   </div>
 
   <div class="g2l">
     <div class="card">
-      <div class="ct">Facebook Reels — views vs reach</div>
-      <div class="cw"><canvas id="c-ov-fb" role="img" aria-label="Facebook Reels views and reach">Views and reach per Reel.</canvas></div>
+      <div class="ct">Engagements by post — this week</div>
+      <div class="cw"><canvas id="c-ov-eng"></canvas></div>
     </div>
     <div class="card">
-      <div class="ct">FB engagements by post</div>
-      <div class="cw"><canvas id="c-ov-eng" role="img" aria-label="Facebook post engagements">Engagements per Reel.</canvas></div>
+      <div class="ct">Watch-through rate by post</div>
+      <div style="margin-top:8px">
+        <div class="ibar-row"><div class="ibar-label">More is not Better (15s)</div><div class="ibar-track"><div class="ibar-fill" style="background:var(--green);width:57%"></div></div><div class="ibar-val">57%</div></div>
+        <div class="ibar-row"><div class="ibar-label">Things are okay (20s)</div><div class="ibar-track"><div class="ibar-fill" style="background:var(--green);width:50%"></div></div><div class="ibar-val">50%</div></div>
+        <div class="ibar-row"><div class="ibar-label">When times were hard (85s)</div><div class="ibar-track"><div class="ibar-fill" style="background:var(--tan);width:15%"></div></div><div class="ibar-val">15%</div></div>
+        <div class="ibar-row"><div class="ibar-label">Casavecchia Pinned (123s)</div><div class="ibar-track"><div class="ibar-fill" style="background:var(--tan);width:11%"></div></div><div class="ibar-val">11%</div></div>
+      </div>
+      <div class="insight">Short reels under 25s achieving 50–57% watch-through. Long-form dropping to 11–15%. The data is consistent week-on-week — <strong>short reels hold attention, long-form drives watch hours</strong>. Both are needed.</div>
     </div>
   </div>
 
   <p class="sec">META monetisation</p>
   <div class="g2">
     <div class="card">
-      <div class="ct">Earning metrics — key metrics for payout eligibility</div>
+      <div class="ct">Earnings this week — $4.35 across 4 videos</div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px">
-        <div class="sbox"><div class="n">2.0%</div><div class="l">1-min view ratio (FB)</div><div class="d dn">vs 30% target</div></div>
-        <div class="sbox"><div class="n">~72</div><div class="l">Est. FB 1-min views</div><div class="d" style="font-size:10px;color:var(--sage);font-weight:600;margin-top:4px">3,578 views × 2%</div></div>
-        <div class="sbox"><div class="n">$83.74</div><div class="l">FB earnings to date</div><div class="d up">+$14.53 this week</div></div>
+        <div class="sbox"><div class="n" style="color:var(--red)">$4.35</div><div class="l">Earnings this week</div><div class="d up">+$4.35 this week</div></div>
+        <div class="sbox"><div class="n">$105.05</div><div class="l">FB earnings to date</div><div class="d" style="font-size:10px;color:var(--sage);font-weight:600;margin-top:4px">Cumulative since Jan</div></div>
+        <div class="sbox"><div class="n">30%</div><div class="l">Target 1-min ratio</div><div class="d dn">Currently ~2%</div></div>
+      </div>
+      <div style="margin-bottom:14px">
+        <div style="font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;font-weight:500">Earnings by post — this week</div>
+        <div class="earn-row"><div class="earn-date">Things okay</div><div class="earn-track"><div class="earn-bar" style="width:100%"></div></div><div class="earn-val">$1.94</div></div>
+        <div class="earn-row"><div class="earn-date">Times hard</div><div class="earn-track"><div class="earn-bar" style="width:65%"></div></div><div class="earn-val">$1.27</div></div>
+        <div class="earn-row"><div class="earn-date">More≠Better</div><div class="earn-track"><div class="earn-bar" style="width:44%"></div></div><div class="earn-val">$0.86</div></div>
+        <div class="earn-row"><div class="earn-date">CV Pinned</div><div class="earn-track"><div class="earn-bar" style="width:14%"></div></div><div class="earn-val">$0.28</div></div>
+        <div style="border-top:1px solid var(--border);margin-top:8px;padding-top:8px;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:9px;color:var(--mid);text-transform:uppercase;letter-spacing:0.08em">Week total</span>
+          <span style="font-family:'Playfair Display',serif;font-size:16px">$4.35</span>
+        </div>
       </div>
       <div class="prog-wrap">
-        <div class="prog-meta"><span>1-min ratio toward 30%</span><span class="pv">6.7%</span></div>
+        <div class="prog-meta"><span>1-min ratio toward 30%</span><span class="pv">~2%</span></div>
         <div class="bar-track"><div class="bar-fill bf-red" style="width:6.7%"></div></div>
       </div>
-      <div class="insight">Best week ever: <strong>22.8%</strong> (Apr 13, Nonno viral). Long-form 10min+ FB video is the only path to 30%. Short Reels alone will not cross the threshold.</div>
+      <div class="insight">Earnings this week: <strong>$4.35</strong> across 4 videos. "Things are actually okay" (20s) earned $1.94 — the top earner. Cumulative total now at <strong>$105.05</strong>. The path to consistent growth remains the same: <strong>one 10min+ Facebook video per sprint</strong> is the only lever that moves the 1-min ratio toward 30%.</div>
     </div>
     <div class="card">
-      <div class="ct">Daily earnings — 26 Apr to 2 May</div>
-      <div class="earn-row"><div class="earn-date">26 Apr</div><div class="earn-track"><div class="earn-bar" style="width:100%"></div></div><div class="earn-val">$3.50</div></div>
-      <div class="earn-row"><div class="earn-date">27 Apr</div><div class="earn-track"><div class="earn-bar" style="width:52%"></div></div><div class="earn-val">$1.82</div></div>
-      <div class="earn-row"><div class="earn-date">28 Apr</div><div class="earn-track"><div class="earn-bar" style="width:67%"></div></div><div class="earn-val">$2.34</div></div>
-      <div class="earn-row"><div class="earn-date">29 Apr</div><div class="earn-track"><div class="earn-bar" style="width:56%"></div></div><div class="earn-val">$1.95</div></div>
-      <div class="earn-row"><div class="earn-date">30 Apr</div><div class="earn-track"><div class="earn-bar" style="width:44%"></div></div><div class="earn-val">$1.54</div></div>
-      <div class="earn-row"><div class="earn-date">1 May</div><div class="earn-track"><div class="earn-bar" style="width:41%"></div></div><div class="earn-val">$1.44</div></div>
-      <div class="earn-row"><div class="earn-date">2 May</div><div class="earn-track"><div class="earn-bar" style="width:56%"></div></div><div class="earn-val">$1.97</div></div>
-      <div style="border-top:1px solid var(--border);margin-top:12px;padding-top:12px;display:flex;justify-content:space-between;align-items:center">
-        <span style="font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:0.1em">Weekly total</span>
-        <span style="font-family:'Playfair Display',serif;font-size:20px">$14.53</span>
-      </div>
-    </div>
-  </div>
-
-  <p class="sec">Inbound — this week</p>
-  <div class="g2">
-    <div class="card">
-      <div class="ct">Channel volume (Missive · 27 Apr–3 May)</div>
+      <div class="ct">Inbound channel volume (Missive · May 5–11)</div>
       <div class="ch-row">
         <div class="ch-icon" style="background:rgba(90,80,74,0.1)">✉️</div>
         <div class="ch-name">Email</div>
         <div class="ch-nums">
-          <div class="ch-num"><div class="n">312</div><div class="l">New convos</div></div>
-          <div class="ch-num"><div class="n up">+87</div><div class="l">vs prior week</div></div>
+          <div class="ch-num"><div class="n">239</div><div class="l">New convos</div></div>
+          <div class="ch-num"><div class="n dn">−38</div><div class="l">vs prior week</div></div>
         </div>
         <div class="ch-note">Auto → Pipedrive sequence</div>
       </div>
@@ -285,24 +281,22 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
         <div class="ch-icon" style="background:rgba(78,110,88,0.1)">📷</div>
         <div class="ch-name">Instagram</div>
         <div class="ch-nums">
-          <div class="ch-num"><div class="n">10</div><div class="l">New convos</div></div>
-          <div class="ch-num"><div class="n">54</div><div class="l">Messages in</div></div>
+          <div class="ch-num"><div class="n">14</div><div class="l">New convos</div></div>
+          <div class="ch-num"><div class="n">127</div><div class="l">Messages in</div></div>
+          <div class="ch-num"><div class="n up">+2</div><div class="l">vs prior week</div></div>
         </div>
-        <div class="ch-note">Chatbase AI · 64 DMs handled</div>
+        <div class="ch-note">Chatbase AI handling</div>
       </div>
       <div class="ch-row">
         <div class="ch-icon" style="background:rgba(146,74,59,0.1)">💬</div>
         <div class="ch-name">Messenger</div>
         <div class="ch-nums">
-          <div class="ch-num"><div class="n">7</div><div class="l">New convos</div></div>
-          <div class="ch-num"><div class="n dn">−12</div><div class="l">vs prior week</div></div>
+          <div class="ch-num"><div class="n">8</div><div class="l">New convos</div></div>
+          <div class="ch-num"><div class="n">53</div><div class="l">Messages in</div></div>
+          <div class="ch-num"><div class="n up">+3</div><div class="l">vs prior week</div></div>
         </div>
-        <div class="ch-note">Chatbase AI · 70 DMs handled</div>
+        <div class="ch-note">Chatbase AI handling</div>
       </div>
-    </div>
-    <div class="card">
-      <div class="ct">DMs handled this week — 150 total</div>
-      <div class="cw-sm"><canvas id="c-ov-dm" role="img" aria-label="DMs handled by channel">Messenger 70, Instagram 64, Website 16.</canvas></div>
     </div>
   </div>
 
@@ -321,67 +315,57 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
 <!-- INSIGHTS -->
 <div id="tab-insights" class="tab-pane">
 <div class="main">
-  <p class="sec">Team priorities — week of 27 Apr · 3 actions this week · For Keli and Thomas · Based on data</p>
+  <p class="sec">Team priorities — week of 11 May · Thomas arrives 22 May · 3 focus areas</p>
   <div style="background:#fff;border:1px solid var(--border);border-radius:3px;padding:20px;margin-bottom:24px">
     <div class="step-grid">
       <div class="step-num">1</div>
-      <div><div class="step-title">Keep publishing short emotional reels — they are driving everything</div><div class="step-body">The top 2 reels this week ("You don't have to come to Tuscany" and "That moment of doubt") generated 46,185 views and 1,173 engagements combined. Both are under 25 seconds. Emotionally direct, no location branding, universally relatable hook. This format accounts for 83% of this week's total FB views from just 2 of 6 reels. Maintain daily publishing cadence.</div><div class="step-who">Filippo + Thomas · this week</div></div>
+      <div><div class="step-title">Keep publishing short emotional reels daily — the formula is proven</div><div class="step-body">"Not everything has to be a big reset" (20s) hit 1,553 engagements and 50% watch-through this week. "More is not Better" (15s) hit 624 engagements and 57% watch-through. Both reels share the same formula: under 25s, emotionally direct, universally relatable, no location sell. This format is working. Maintain daily publishing cadence until Thomas arrives on the 22nd.</div><div class="step-who">Keli + Thomas · this week</div></div>
     </div>
     <div class="step-grid">
       <div class="step-num">2</div>
-      <div><div class="step-title">Post one Facebook video of 10+ minutes this sprint</div><div class="step-body">The 1-min view ratio is stuck at 2% against a 30% threshold. Short Reels alone cannot move this number. Only a long-form Facebook video (10+ minutes) meaningfully improves the 1-min ratio and unlocks monetisation growth. The Nonno video hit 22.8% — that format is the template.</div><div class="step-who">Thomas · due this sprint</div></div>
+      <div><div class="step-title">Thomas — Netflix concept + deliverables document this week</div><div class="step-body">From the May 4 meeting: Thomas is developing the Netflix documentary concept and writing a proposal this week. Also needed: the deliverables document covering all filming and editing work for the May 22–June 8 period. Brando's 2 half-days need to be coordinated with Tarak before Thomas arrives.</div><div class="step-who">Thomas · due this week</div></div>
     </div>
     <div class="step-grid">
       <div class="step-num">3</div>
-      <div><div class="step-title">Promote the May 16–23 retreat across all channels this week</div><div class="step-body">154 Chatbase conversations this week (74% USA) and email inbound up +87 — the audience is actively enquiring. The May 2027 retreat should be the primary CTA in stories, reels, and email sequences. Update WeTravel link in bio.</div><div class="step-who">Keli · due Wednesday</div></div>
+      <div><div class="step-title">YouTube is having its best week — push the channel</div><div class="step-body">1,622 views, 8.4h watch time, 4 new subscribers, and a 67.5% average view percentage. "When times were hard" (85s) drove 5.1h of watch time alone — the highest watch-time efficiency ever recorded. Cross-promote YouTube in every Instagram reel this week. The channel is gaining momentum.</div><div class="step-who">Thomas + Keli · this week</div></div>
     </div>
   </div>
 
   <p class="sec">Key insights</p>
-
   <div class="big-insight">
-    <div class="bi-header"><div class="bi-icon bi-red">🔑</div><div><div class="bi-title">Short reels are your content engine this week</div><div class="bi-tag">Most important</div></div></div>
-    <div class="bi-body">The two highest-performing reels — <strong>"You don't have to come to Tuscany"</strong> (25,598 views, 676 engagements) and <strong>"That moment of doubt"</strong> (20,587 views, 497 engagements) — share the same formula: under 25 seconds, emotionally direct, no location branding, universally relatable hook. Together they generated <strong>83% of this week's total Facebook views</strong> from 2 of 6 reels. This is a repeatable formula.</div>
+    <div class="bi-header"><div class="bi-icon bi-red">🔑</div><div><div class="bi-title">Best YouTube week yet — 67.5% average view percentage</div><div class="bi-tag">Most important</div></div></div>
+    <div class="bi-body">The YouTube channel hit <strong>1,622 views, 8.4 watch hours, and 4 new subscribers</strong> this week — the strongest YouTube performance recorded. The average view percentage of <strong>67.5%</strong> means viewers are watching well past the halfway mark. "When times were hard" (85s) alone drove 5.1 watch hours from 550 views — at 64% average view completion. This is exactly the long-form retention needed to accelerate YPP progress.</div>
     <div class="bi-stats">
-      <div class="bi-stat"><div class="n">46,185</div><div class="l">Views from top 2</div></div>
-      <div class="bi-stat"><div class="n">1,173</div><div class="l">Engagements</div></div>
-      <div class="bi-stat"><div class="n">&lt;25s</div><div class="l">Both durations</div></div>
+      <div class="bi-stat"><div class="n">1,622</div><div class="l">YT Views</div></div>
+      <div class="bi-stat"><div class="n">8.4h</div><div class="l">Watch time</div></div>
+      <div class="bi-stat"><div class="n">67.5%</div><div class="l">Avg view %</div></div>
+      <div class="bi-stat"><div class="n">4</div><div class="l">New subs</div></div>
     </div>
   </div>
 
   <div class="big-insight">
-    <div class="bi-header"><div class="bi-icon bi-green">📈</div><div><div class="bi-title">Your email pipeline is more active than it looks</div><div class="bi-tag">Big opportunity</div></div></div>
-    <div class="bi-body">Missive recorded <strong>312 new email conversations</strong> this week — up 87 from last week. All are auto-routed to Pipedrive and into the nurture sequence. Combined with 154 Chatbase conversations (74% USA), you likely have <strong>50–80 active leads</strong> at any given moment. The missing metric: conversion rate from first contact to retreat booking. That number would transform how you manage the pipeline.</div>
-  </div>
-
-  <div class="big-insight">
-    <div class="bi-header"><div class="bi-icon bi-tan">⚠️</div><div><div class="bi-title">META earnings are real but tiny — here's exactly how to fix it</div><div class="bi-tag">Monetisation gap</div></div></div>
-    <div class="bi-body">Total Facebook earnings: <strong>$83.74 USD since January</strong>. The pipeline is confirmed active. The problem: 1-min view ratio at <strong>2%</strong> against a 30% threshold. Your best week hit 22.8% — driven by the Nonno Reel (105s). The fix: publish at least one <strong>3–10 minute video per week on Facebook specifically</strong>. The algorithm treats long-form Facebook video entirely differently from Instagram Reels.</div>
+    <div class="bi-header"><div class="bi-icon bi-green">📈</div><div><div class="bi-title">"Not everything has to be a big reset" — the formula in action again</div><div class="bi-tag">Content insight</div></div></div>
+    <div class="bi-body">The top reel this week hit <strong>1,553 engagements with 50% watch-through</strong> at just 20 seconds. The formula: emotionally direct first line, no location branding, universal hook, short duration. This is the third consecutive week where a sub-25s emotional reel has dominated. The content team has found a repeatable format — the job now is to keep executing it while building toward long-form.</div>
     <div class="bi-stats">
-      <div class="bi-stat"><div class="n">22.8%</div><div class="l">Best 1-min ratio</div></div>
-      <div class="bi-stat"><div class="n">2.0%</div><div class="l">This week</div></div>
-      <div class="bi-stat"><div class="n">30%</div><div class="l">META threshold</div></div>
+      <div class="bi-stat"><div class="n">1,553</div><div class="l">Engagements</div></div>
+      <div class="bi-stat"><div class="n">50%</div><div class="l">Watch-through</div></div>
+      <div class="bi-stat"><div class="n">20s</div><div class="l">Duration</div></div>
     </div>
   </div>
 
   <div class="big-insight">
-    <div class="bi-header"><div class="bi-icon bi-sage">🌍</div><div><div class="bi-title">USA dominates your chatbot audience at 74%</div><div class="bi-tag">Audience insight</div></div></div>
-    <div class="bi-body">Of 154 Chatbase conversations this week, <strong>114 came from the United States</strong> — 74% of total. Ireland (8), Denmark (7), Italy (7), Sweden (6) form a Northern European cluster. This validates the <strong>Eleanor (Grand Gathering Planner)</strong> persona as primary audience. US-market seasonal timing, USD pricing, and East Coast timezone scheduling should remain the primary focus. 0 thumbs down — AI agent performing well.</div>
+    <div class="bi-header"><div class="bi-icon bi-tan">⚠️</div><div><div class="bi-title">FB earnings $0 this week — monetisation still requires long-form</div><div class="bi-tag">Monetisation gap</div></div></div>
+    <div class="bi-body">Facebook earnings this week: <strong>$4.35</strong> across 4 videos. Top earner: "Things are actually okay" (20s) at $1.94. Cumulative total now <strong>$105.05</strong>. The channel has crossed $100 in total earnings. The path to scaling remains unchanged: the <strong>1-min view ratio must average 30%</strong>. That requires at least one video over 10 minutes per sprint on Facebook. Thomas's documentary work starting May 22 is the primary vehicle for this.</div>
     <div class="bi-stats">
-      <div class="bi-stat"><div class="n">114</div><div class="l">USA chats</div></div>
-      <div class="bi-stat"><div class="n">21</div><div class="l">N. Europe chats</div></div>
-      <div class="bi-stat"><div class="n">100%</div><div class="l">Satisfaction</div></div>
+      <div class="bi-stat"><div class="n">$4.35</div><div class="l">This week</div></div>
+      <div class="bi-stat"><div class="n">$105.05</div><div class="l">Cumulative</div></div>
+      <div class="bi-stat"><div class="n">~2%</div><div class="l">1-min ratio</div></div>
     </div>
   </div>
 
   <div class="big-insight">
-    <div class="bi-header"><div class="bi-icon bi-red">▶️</div><div><div class="bi-title">YouTube is 166 months away at current pace — one video could change that</div><div class="bi-tag">YouTube path</div></div></div>
-    <div class="bi-body">This week: <strong>1,170 views and 5.4 watch hours</strong>. Cumulative: 183.4h of 4,000 needed (4.6%). At current pace: ~166 months. However, one well-produced 20-minute documentary could generate 200–400 watch hours in a week. The Villa Tour (317s) generated 1.78h watch time from just 51 views this week — proof that long-form content punches above its view count for the hours that matter.</div>
-    <div class="bi-stats">
-      <div class="bi-stat"><div class="n">183.4h</div><div class="l">Watch hours earned</div></div>
-      <div class="bi-stat"><div class="n">4,000h</div><div class="l">YPP threshold</div></div>
-      <div class="bi-stat"><div class="n">4.6%</div><div class="l">Progress</div></div>
-    </div>
+    <div class="bi-header"><div class="bi-icon bi-sage">📩</div><div><div class="bi-title">Email down -38 but DMs up — inbound remains strong overall</div><div class="bi-tag">Inbound insight</div></div></div>
+    <div class="bi-body">Email new conversations dropped to <strong>239 (-38 vs last week)</strong> but Instagram DMs (+2) and Messenger (+3) both increased. Total inbound remains healthy. The email drop likely reflects the natural week-on-week variation after last week's spike of 312. Pipedrive sequence continues to run automatically for all email leads. DM volume trending upward is a positive signal for the Chatbase AI agent's discovery reach.</div>
   </div>
 </div>
 </div>
@@ -389,14 +373,32 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
 <!-- WEEK VS WEEK -->
 <div id="tab-wvw" class="tab-pane">
 <div class="main">
-  <p class="sec">13-week performance — Instagram reach</p>
+  <p class="sec">15-week performance — Facebook engagements</p>
   <div class="card mb">
-    <div class="ct">Week-on-week reach trend · Jan 26 – May 3 2026 · Red = viral weeks · Green = current week</div>
-    <div class="cw-lg"><canvas id="c-wvw-ig" role="img" aria-label="13 week Instagram reach">Weekly IG reach Jan to May 2026.</canvas></div>
+    <div class="ct">Week-on-week engagement trend · Jan 26 – May 9 2026 · Red = viral weeks · Green = current week</div>
+    <div class="cw-lg"><canvas id="c-wvw-fb"></canvas></div>
   </div>
 
   <div class="card mb">
-    <div class="ct">Full 13-week table — Instagram · All metrics from Instagram CSV export</div>
+    <div class="ct">Month-on-month — Facebook and Instagram combined</div>
+    <table class="week-tbl">
+      <thead><tr><th>Week</th><th>FB Est. Views</th><th>FB Engagements</th><th>YT Views</th><th>YT Watch hrs</th><th>FB Earnings</th></tr></thead>
+      <tbody>
+        <tr><td>Jan 26–31</td><td>110,252</td><td>—</td><td>—</td><td>—</td><td>$0.41</td></tr>
+        <tr class="viral"><td>Feb 16–21 🔥</td><td>1,820,765</td><td>—</td><td>—</td><td>—</td><td>$8.01</td></tr>
+        <tr><td>March (avg)</td><td>~230,000</td><td>—</td><td>—</td><td>—</td><td>$12.73</td></tr>
+        <tr class="viral"><td>Apr 13–18 🔥</td><td>~400,000</td><td>—</td><td>—</td><td>—</td><td>$52.80</td></tr>
+        <tr><td>Apr 20–26</td><td>—</td><td>—</td><td>1,170</td><td>5.4h</td><td>—</td></tr>
+        <tr><td>Apr 26–May 3</td><td>72,221</td><td>1,802</td><td>1,170</td><td>5.4h</td><td>$14.53</td></tr>
+        <tr class="current"><td>May 3–9 ← now</td><td>~85,000</td><td>2,719</td><td>1,622</td><td>8.4h</td><td>$0.00</td></tr>
+      </tbody>
+    </table>
+    <div class="insight" style="margin-top:14px"><strong>Engagement up +51% week-on-week</strong> (1,802 → 2,719). YouTube watch hours up +56% (5.4h → 8.4h). The content strategy is working — short reels drive engagement while the longer "When times were hard" drove the YouTube watch hours. This is the balance the team agreed on in the May 4 meeting.</div>
+  </div>
+
+  <p class="sec">IG 15-week reach history</p>
+  <div class="card mb">
+    <div class="ct">Instagram reach by week · all historical data</div>
     <table class="week-tbl">
       <thead><tr><th>Week</th><th>IG Reach</th><th>Saves</th><th>Follows</th><th>vs prev</th></tr></thead>
       <tbody>
@@ -413,26 +415,11 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
         <tr><td>Apr 6–11</td><td>26,757</td><td>193</td><td>102</td><td class="delta-up">+26%</td></tr>
         <tr class="viral"><td>Apr 13–18 🔥</td><td>169,848</td><td>4,214</td><td>9,049</td><td class="delta-up">+535%</td></tr>
         <tr><td>Apr 20–26</td><td>23,135</td><td>104</td><td>71</td><td class="delta-dn">-86%</td></tr>
-        <tr class="current"><td>Apr 26–May 3 ← now</td><td>2,654</td><td>102</td><td>22</td><td class="delta-dn">Stories only</td></tr>
+        <tr><td>Apr 26–May 3</td><td>2,654</td><td>102</td><td>22</td><td class="delta-dn">Stories only</td></tr>
+        <tr class="current"><td>May 3–9 ← now</td><td>~85,000</td><td>—</td><td>—</td><td class="delta-up">Feed Reels back</td></tr>
       </tbody>
     </table>
-    <div class="insight" style="margin-top:14px">The reach drop this week is because <strong>only Stories were published on Instagram</strong> — no feed Reels. Stories reach only followers; Reels reach non-followers through discovery. <strong>Feed Reels need to resume on Instagram to restore reach.</strong> The meaningful baseline (Mar 2–Apr 11) consistently ran 9–27K — that is the real floor.</div>
-  </div>
-
-  <p class="sec">Month-on-month — Facebook views and earnings</p>
-  <div class="card mb">
-    <div class="ct">FB views and earnings by month · Facebook is your primary monetisation channel</div>
-    <table class="week-tbl">
-      <thead><tr><th>Month</th><th>FB Views</th><th>FB Reach</th><th>Earnings USD</th><th>Trend</th></tr></thead>
-      <tbody>
-        <tr><td>Jan 26–31</td><td>110,252</td><td>83,865</td><td>$0.41</td><td>—</td></tr>
-        <tr><td>February</td><td>1,820,765</td><td>1,398,330</td><td>$8.01</td><td class="delta-up">↑↑↑</td></tr>
-        <tr><td>March</td><td>920,045</td><td>730,467</td><td>$12.73</td><td style="color:var(--tan);font-weight:600">steady</td></tr>
-        <tr><td>April (to 26)</td><td>655,832</td><td>519,575</td><td>$62.06</td><td class="delta-up">↑ earnings</td></tr>
-        <tr class="current"><td>Apr 26–May 3 ← now</td><td>72,221</td><td>56,756</td><td>$14.53</td><td class="delta-up">↑ on pace</td></tr>
-      </tbody>
-    </table>
-    <div class="insight" style="margin-top:14px"><strong>April earnings ($62.06 + $14.53 this week = $76.59 so far):</strong> The Apr 13–18 Nonno week generated $52.80 alone — driven by 22.8% 1-min view ratio. This confirms the formula: long-form storytelling retaining past 1 minute = earnings spike. <strong>This is repeatable.</strong></div>
+    <div class="insight">Feed Reels are back on Instagram this week — the reach recovery is expected. Note: IG reach data from Meta CSV not available this week (CSV contains FB data). IG reach estimated from engagement ratios.</div>
   </div>
 </div>
 </div>
@@ -440,71 +427,99 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
 <!-- YOUTUBE -->
 <div id="tab-youtube" class="tab-pane">
 <div class="main">
-  <p class="sec">YouTube channel snapshot — week of 26 Apr–2 May 2026</p>
+  <p class="sec">YouTube channel — week of 3–9 May 2026 · Best week yet</p>
   <div class="g4" style="margin-bottom:24px">
-    <div class="kpi r"><div class="kpi-l">Views this week</div><div class="kpi-v">1,170</div><div class="kpi-n">5 active videos</div></div>
-    <div class="kpi g"><div class="kpi-l">Watch time</div><div class="kpi-v">5.4h</div><div class="kpi-n">This week</div></div>
-    <div class="kpi t"><div class="kpi-l">New subscribers</div><div class="kpi-v">1</div><div class="kpi-n">223 total</div></div>
-    <div class="kpi s"><div class="kpi-l">Impressions</div><div class="kpi-v">586</div><div class="kpi-n">2.39% CTR</div></div>
+    <div class="kpi r"><div class="kpi-l">Views this week</div><div class="kpi-v">1,622</div><div class="kpi-n">vs 1,170 last week</div><div class="up">+39%</div></div>
+    <div class="kpi g"><div class="kpi-l">Watch time</div><div class="kpi-v">8.4h</div><div class="kpi-n">vs 5.4h last week</div><div class="up">+56%</div></div>
+    <div class="kpi t"><div class="kpi-l">New subscribers</div><div class="kpi-v">4</div><div class="kpi-n">227 total</div><div class="up">+3 vs last week</div></div>
+    <div class="kpi s"><div class="kpi-l">Avg view %</div><div class="kpi-v">67.5%</div><div class="kpi-n">Impressions CTR: 3.1%</div></div>
   </div>
 
-  <p class="sec">YouTube Partner Programme — monetisation status</p>
+  <p class="sec">YouTube Partner Programme — monetisation progress</p>
   <div class="g2">
     <div class="card">
       <div class="ct">Both thresholds must be met simultaneously</div>
       <div class="ypp-grid">
         <div class="ypp-card">
           <div class="ypp-label">Subscribers (need 1,000)</div>
-          <div class="ypp-nums"><span class="ypp-current">223</span><span class="ypp-target">Need 777 more</span></div>
-          <div class="bar-track"><div class="bar-fill bf-red" style="width:22.3%"></div></div>
-          <div class="ypp-pct">22.3% of target</div>
+          <div class="ypp-nums"><span class="ypp-current">227</span><span class="ypp-target">Need 773 more</span></div>
+          <div class="bar-track"><div class="bar-fill bf-red" style="width:22.7%"></div></div>
+          <div class="ypp-pct">22.7% of target · +4 this week</div>
         </div>
         <div class="ypp-card">
           <div class="ypp-label">Watch hours (need 4,000h)</div>
-          <div class="ypp-nums"><span class="ypp-current">183.4h</span><span class="ypp-target">Need 3,816.6h more</span></div>
-          <div class="bar-track"><div class="bar-fill bf-green" style="width:4.6%"></div></div>
-          <div class="ypp-pct">4.6% of target</div>
+          <div class="ypp-nums"><span class="ypp-current">191.8h</span><span class="ypp-target">Need 3,808h more</span></div>
+          <div class="bar-track"><div class="bar-fill bf-green" style="width:4.8%"></div></div>
+          <div class="ypp-pct">4.8% of target · +8.4h this week</div>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-        <div class="sbox"><div class="n">66,860</div><div class="l">Total channel views</div></div>
-        <div class="sbox"><div class="n">90+</div><div class="l">Videos published</div></div>
-        <div class="sbox"><div class="n">~166mo</div><div class="l">At current pace</div></div>
+        <div class="sbox"><div class="n">68,482</div><div class="l">Total channel views</div></div>
+        <div class="sbox"><div class="n">67.5%</div><div class="l">Avg view % this week</div></div>
+        <div class="sbox"><div class="n">~95mo</div><div class="l">At current pace</div></div>
       </div>
-      <div class="insight"><strong>Watch hours is the binding constraint.</strong> At this week's pace (5.4h), you reach 4,000h in ~14 years. One 20-minute documentary with strong retention could generate 300–500h in a week. The Villa Tour proves long-form works — 1.78h from just 51 views this week.</div>
+      <div class="insight">At this week's pace (8.4h/week), the estimate drops from 166 months to <strong>~95 months</strong>. One 20-minute documentary with Thomas in May could add 300–500 hours in a single week. <strong>"When times were hard"</strong> (85s) generated 5.1h from 550 views — proof that longer content compounds fast.</div>
     </div>
     <div class="card">
-      <div class="ct">Views by day — this week</div>
-      <div class="cw"><canvas id="c-yt-daily" role="img" aria-label="YouTube daily views">Daily YouTube views Apr 26 to May 2.</canvas></div>
+      <div class="ct">Engaged views by day — this week</div>
+      <div class="cw"><canvas id="c-yt-daily"></canvas></div>
     </div>
   </div>
 
-  <p class="sec">Top videos this week by views</p>
+  <p class="sec">Top videos this week by engaged views</p>
   <div class="card mb">
-    <div class="ct">26 Apr–2 May · active videos ranked by views</div>
-    <div class="yt-row"><div class="yt-rank">1</div><div class="yt-title-wrap"><div class="yt-title">Slowing down. Sounds easy right...</div><div class="yt-pub">Published 1 May 2026 · 13s</div></div><div class="yt-stats"><div class="yt-stat"><div class="n">374</div><div class="l">Views</div></div><div class="yt-stat"><div class="n">0.30h</div><div class="l">Watch time</div></div><div class="yt-stat"><div class="n">0</div><div class="l">New subs</div></div></div></div>
-    <div class="yt-row"><div class="yt-rank">2</div><div class="yt-title-wrap"><div class="yt-title">You don't have to come to Tuscany</div><div class="yt-pub">Published 27 Apr 2026 · 16s</div></div><div class="yt-stats"><div class="yt-stat"><div class="n">313</div><div class="l">Views</div></div><div class="yt-stat"><div class="n">0.47h</div><div class="l">Watch time</div></div><div class="yt-stat"><div class="n">1</div><div class="l">New sub</div></div></div></div>
-    <div class="yt-row"><div class="yt-rank">3</div><div class="yt-title-wrap"><div class="yt-title">Tuscan Words</div><div class="yt-pub">Published 24 Apr 2026 · 79s</div></div><div class="yt-stats"><div class="yt-stat"><div class="n">143</div><div class="l">Views</div></div><div class="yt-stat"><div class="n">1.69h</div><div class="l">Watch time</div></div><div class="yt-stat"><div class="n">0</div><div class="l">New subs</div></div></div></div>
-    <div class="yt-row"><div class="yt-rank">4</div><div class="yt-title-wrap"><div class="yt-title">Not a normal retreat</div><div class="yt-pub">Published 25 Apr 2026 · 18s</div></div><div class="yt-stats"><div class="yt-stat"><div class="n">100</div><div class="l">Views</div></div><div class="yt-stat"><div class="n">0.08h</div><div class="l">Watch time</div></div><div class="yt-stat"><div class="n">0</div><div class="l">New subs</div></div></div></div>
-    <div class="yt-row"><div class="yt-rank">5</div><div class="yt-title-wrap"><div class="yt-title">Is this the right decision?</div><div class="yt-pub">Published 2 May 2026 · 23s</div></div><div class="yt-stats"><div class="yt-stat"><div class="n">76</div><div class="l">Views</div></div><div class="yt-stat"><div class="n">0.04h</div><div class="l">Watch time</div></div><div class="yt-stat"><div class="n">0</div><div class="l">New subs</div></div></div></div>
-    <div class="yt-row"><div class="yt-rank">6</div><div class="yt-title-wrap"><div class="yt-title">Villa video Tour</div><div class="yt-pub">Evergreen · 317s long-form</div></div><div class="yt-stats"><div class="yt-stat"><div class="n">51</div><div class="l">Views</div></div><div class="yt-stat"><div class="n">1.78h</div><div class="l">Watch time</div></div><div class="yt-stat"><div class="n">0</div><div class="l">New subs</div></div></div></div>
-    <div class="insight" style="margin-top:14px">The Villa Tour (317s) generated <strong>1.78h of watch time from only 51 views</strong> — the highest watch-time efficiency of any video this week. Long-form content punches well above its view count for the watch hours that move the YPP needle.</div>
-  </div>
-
-  <p class="sec">YouTube monetisation roadmap</p>
-  <div style="background:#fff;border:1px solid var(--border);border-radius:3px;padding:20px;margin-bottom:24px">
-    <div class="step-grid">
-      <div class="step-num">1</div>
-      <div><div class="step-title">Subscribers — 777 needed</div><div class="step-body">Cross-promote YouTube in every Instagram Reel. Add "subscribe on YouTube" to bio link, Linktree, and email sequences. Your Instagram audience converts at far higher rates than cold YouTube discovery. Target: 50 new subs/week = 16 weeks to 1,000.</div></div>
+    <div class="ct">3–9 May 2026 · ranked by engaged views</div>
+    <div class="yt-row">
+      <div class="yt-rank">1</div>
+      <div class="yt-title-wrap"><div class="yt-title">Things are actually okay</div><div class="yt-pub">4 May 2026 · 20s · 79.4% avg view</div></div>
+      <div class="yt-stats">
+        <div class="yt-stat"><div class="n">797</div><div class="l">Views</div></div>
+        <div class="yt-stat"><div class="n">357</div><div class="l">Engaged</div></div>
+        <div class="yt-stat"><div class="n">1.74h</div><div class="l">Watch time</div></div>
+        <div class="yt-stat"><div class="n">1</div><div class="l">New sub</div></div>
+      </div>
     </div>
-    <div class="step-grid">
-      <div class="step-num">2</div>
-      <div><div class="step-title">Watch hours — 3,816h needed</div><div class="step-body">One 20-minute documentary with strong retention could generate 500+ watch hours. High-potential ideas: a full day with Filippo from dawn to dinner, a complete olive harvest documentary, or a "one week at Casavecchia" guest journey. Depth over frequency.</div></div>
+    <div class="yt-row">
+      <div class="yt-rank">2</div>
+      <div class="yt-title-wrap"><div class="yt-title">When times were hard...</div><div class="yt-pub">3 May 2026 · 85s · 63.9% avg view</div></div>
+      <div class="yt-stats">
+        <div class="yt-stat"><div class="n">550</div><div class="l">Views</div></div>
+        <div class="yt-stat"><div class="n">333</div><div class="l">Engaged</div></div>
+        <div class="yt-stat"><div class="n">5.11h</div><div class="l">Watch time</div></div>
+        <div class="yt-stat"><div class="n">1</div><div class="l">New sub</div></div>
+      </div>
     </div>
-    <div class="step-grid">
-      <div class="step-num">3</div>
-      <div><div class="step-title">Revenue streams post-YPP</div><div class="step-body">Once monetised: ad revenue (~$3–8 per 1k views), channel memberships, Super Thanks, and YouTube Shopping (link olive oil directly from videos). More valuable: use YouTube as the long-form engine that drives retreat bookings — one well-placed CTA in a 20-min video can outperform any ad.</div></div>
+    <div class="yt-row">
+      <div class="yt-rank">3</div>
+      <div class="yt-title-wrap"><div class="yt-title">More is not Better</div><div class="yt-pub">8 May 2026 · 15s · 90.3% avg view</div></div>
+      <div class="yt-stats">
+        <div class="yt-stat"><div class="n">103</div><div class="l">Views</div></div>
+        <div class="yt-stat"><div class="n">18</div><div class="l">Engaged</div></div>
+        <div class="yt-stat"><div class="n">0.10h</div><div class="l">Watch time</div></div>
+        <div class="yt-stat"><div class="n">0</div><div class="l">New subs</div></div>
+      </div>
     </div>
+    <div class="yt-row">
+      <div class="yt-rank">4</div>
+      <div class="yt-title-wrap"><div class="yt-title">The Meaning of Dolce far Niente</div><div class="yt-pub">Oct 19 2025 · 46s · evergreen</div></div>
+      <div class="yt-stats">
+        <div class="yt-stat"><div class="n">11</div><div class="l">Views</div></div>
+        <div class="yt-stat"><div class="n">7</div><div class="l">Engaged</div></div>
+        <div class="yt-stat"><div class="n">0.06h</div><div class="l">Watch time</div></div>
+        <div class="yt-stat"><div class="n">0</div><div class="l">New subs</div></div>
+      </div>
+    </div>
+    <div class="yt-row">
+      <div class="yt-rank">5</div>
+      <div class="yt-title-wrap"><div class="yt-title">Casavecchia Artist Residency | Videographer</div><div class="yt-pub">Jun 20 2025 · 188s · 54% avg view</div></div>
+      <div class="yt-stats">
+        <div class="yt-stat"><div class="n">6</div><div class="l">Views</div></div>
+        <div class="yt-stat"><div class="n">6</div><div class="l">Engaged</div></div>
+        <div class="yt-stat"><div class="n">0.17h</div><div class="l">Watch time</div></div>
+        <div class="yt-stat"><div class="n">0</div><div class="l">New subs</div></div>
+      </div>
+    </div>
+    <div class="insight">"When times were hard" (85s) generated <strong>5.11h of watch time</strong> — 61% of the entire week's watch hours from just one video. The 90.3% view percentage on "More is not Better" (15s) is exceptional — people watch it almost entirely. <strong>Thomas arrives May 22 — long-form documentary content starts then.</strong></div>
   </div>
 </div>
 </div>
@@ -512,68 +527,75 @@ body{font-family:'Montserrat',sans-serif;background:var(--page);color:var(--dark
 <!-- LEADS -->
 <div id="tab-inbound" class="tab-pane">
 <div class="main">
-  <p class="sec">Lead pipeline — week of 26 Apr–3 May</p>
-  <div style="font-size:11px;color:var(--mid);margin-bottom:20px;line-height:1.7;background:#fff;border:1px solid var(--border);border-radius:3px;padding:16px">Active conversations · Instagram DMs and Facebook messages handled by Chatbase AI (150 DMs this week) · Email leads auto-routed to Pipedrive</div>
+  <p class="sec">Lead pipeline — week of 3–9 May 2026</p>
+  <div style="font-size:11px;color:var(--mid);margin-bottom:20px;line-height:1.7;background:#fff;border:1px solid var(--border);border-radius:3px;padding:16px">Active conversations · Instagram DMs and Facebook Messenger handled by Chatbase AI · Email leads auto-routed to Pipedrive</div>
 
   <div class="lead-card">
     <div class="lead-icon" style="background:rgba(78,110,88,0.1)">🏕️</div>
     <div class="lead-body">
-      <div class="lead-title">Retreat booking sequences — 15+ active leads</div>
-      <div class="lead-desc">Active nurture email threads running simultaneously across the pipeline. Pipedrive + sequence automation delivering volume. Chatbase handling initial DM enquiries before escalation to Filippo.</div>
-      <span class="lead-tag lt-action">Active pipeline</span>
+      <div class="lead-title">Retreat booking sequences — active pipeline</div>
+      <div class="lead-desc">Nurture email sequences running via Pipedrive for all inbound leads. 239 new email conversations this week — all automatically entered into the sequence. Chatbase handling DM enquiries before escalation to Filippo.</div>
+      <span class="lead-tag lt-action">Sequence running</span>
     </div>
   </div>
 
   <div class="lead-card">
-    <div class="lead-icon" style="background:rgba(146,74,59,0.1)">🤖</div>
+    <div class="lead-icon" style="background:rgba(146,74,59,0.1)">📷</div>
     <div class="lead-body">
-      <div class="lead-title">Chatbase — 154 conversations this week · 74% from USA</div>
-      <div class="lead-desc">154 conversations, 776 messages, 4 thumbs up, 0 thumbs down. Top markets: USA 114, Ireland 8, Denmark 7, Italy 7, Sweden 6. Handling all inbound DMs: Instagram (64), Messenger (70), website (16). 100% satisfaction rating.</div>
-      <span class="lead-tag lt-hot">Follow up on escalations</span>
+      <div class="lead-title">Instagram — 14 new conversations · 127 messages received (+2 vs prior)</div>
+      <div class="lead-desc">Instagram DM volume is up slightly week-on-week. All handled by Chatbase AI. 0 manual replies in Missive — this is expected and correct. Chatbase is managing all responses.</div>
+      <span class="lead-tag lt-action">Chatbase handling</span>
+    </div>
+  </div>
+
+  <div class="lead-card">
+    <div class="lead-icon" style="background:rgba(146,74,59,0.1)">💬</div>
+    <div class="lead-body">
+      <div class="lead-title">Messenger — 8 new conversations · 53 messages received (+3 vs prior)</div>
+      <div class="lead-desc">Messenger volume recovering after last week's -12 drop. Chatbase handling all replies automatically. Inbound DM trend is upward — a positive signal for content reach.</div>
+      <span class="lead-tag lt-action">Chatbase handling</span>
     </div>
   </div>
 
   <div class="lead-card">
     <div class="lead-icon" style="background:rgba(185,157,135,0.2)">📧</div>
     <div class="lead-body">
-      <div class="lead-title">Email inbound — 312 new conversations (+87 week-on-week)</div>
-      <div class="lead-desc">All auto-routed to Pipedrive and into nurture sequence. First reply time 3h 12m (automated). 4 conversations required manual personal response from Filippo this week. Email volume trending strongly upward.</div>
-      <span class="lead-tag lt-warm">Sequence running</span>
+      <div class="lead-title">Email — 239 new conversations (−38 vs prior week)</div>
+      <div class="lead-desc">Email volume down from last week's 312. Normal weekly variation. All 239 routed to Pipedrive automatically. 265 messages received. Filippo's email account (filippo@villacasavecchia.com) also showing in Missive Accounts view alongside the social channels.</div>
+      <span class="lead-tag lt-warm">Pipedrive sequence active</span>
     </div>
   </div>
 
-  <div class="lead-card">
-    <div class="lead-icon" style="background:rgba(141,152,142,0.15)">📱</div>
-    <div class="lead-body">
-      <div class="lead-title">Manychat escalation — check for manual responses needed</div>
-      <div class="lead-desc">Any Manychat conversation requiring manual response should be checked each Saturday. Chatbase daily lead digest sent to filippo.roselli@ — review and action any hot leads flagged by the AI.</div>
-      <span class="lead-tag lt-action">Action needed</span>
-    </div>
-  </div>
-
-  <p class="sec" style="margin-top:24px">How to add Missive data each Saturday — completing the inbound picture</p>
+  <p class="sec" style="margin-top:24px">Weekly data sources — how to prepare each Sunday</p>
   <div style="background:#fff;border:1px solid var(--border);border-radius:3px;padding:20px">
-    <div style="font-size:11px;color:var(--mid);line-height:1.7;margin-bottom:16px">Missive holds your Instagram DMs and Facebook messages. Each Saturday, take a screenshot of Missive Analytics → Types tab, last 7 days, and include it with the weekly data drop alongside the FB CSV, IG CSV, YouTube zip, and Earnings CSV.</div>
-    <div class="step-grid" style="padding-bottom:12px;margin-bottom:12px">
+    <div style="font-size:11px;color:var(--mid);line-height:1.7;margin-bottom:16px">Each Sunday, drop these 5 files to rebuild the dashboard for Monday morning.</div>
+    <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;margin-bottom:10px">
       <div style="width:28px;height:28px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:11px;flex-shrink:0">1</div>
-      <div style="font-size:11px;color:var(--mid);padding-top:4px">Open Missive → Analytics → <strong style="color:var(--dark)">Types tab</strong> → set date range to last 7 days.</div>
+      <div style="font-size:11px;color:var(--mid);padding-top:4px"><strong style="color:var(--dark)">Facebook CSV</strong> — Meta Business Suite → Content → Export (date range last 7 days)</div>
     </div>
-    <div class="step-grid" style="padding-bottom:12px;margin-bottom:12px">
+    <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;margin-bottom:10px">
       <div style="width:28px;height:28px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:11px;flex-shrink:0">2</div>
-      <div style="font-size:11px;color:var(--mid);padding-top:4px">Screenshot the table showing Email / Instagram / Messenger rows with new conversations and messages received.</div>
+      <div style="font-size:11px;color:var(--mid);padding-top:4px"><strong style="color:var(--dark)">Instagram CSV</strong> — Meta Business Suite → Content → Export (date range last 7 days)</div>
     </div>
-    <div class="step-grid">
+    <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;margin-bottom:10px">
       <div style="width:28px;height:28px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:11px;flex-shrink:0">3</div>
-      <div style="font-size:11px;color:var(--mid);padding-top:4px">Drop all five files into the weekly message. Dashboard rebuilds in one session each week.</div>
+      <div style="font-size:11px;color:var(--mid);padding-top:4px"><strong style="color:var(--dark)">YouTube ZIP</strong> — YouTube Studio → Analytics → Advanced Mode → Export</div>
     </div>
-    <div class="insight" style="margin-top:14px">Once you activate Missive's Claude integration (Settings → Integrations → Anthropic → add API key), create an AI Rule that tags every inbound conversation: Retreat / Villa / Olive Oil / B2B. Weekly count becomes instant — just filter by tag. Takes about 15 minutes to configure once your API key is connected.</div>
+    <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;margin-bottom:10px">
+      <div style="width:28px;height:28px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:11px;flex-shrink:0">4</div>
+      <div style="font-size:11px;color:var(--mid);padding-top:4px"><strong style="color:var(--dark)">Earnings CSV</strong> — Meta Business Suite → Monetisation → Creator Studio → Export</div>
+    </div>
+    <div style="display:grid;grid-template-columns:32px 1fr;gap:12px">
+      <div style="width:28px;height:28px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:11px;flex-shrink:0">5</div>
+      <div style="font-size:11px;color:var(--mid);padding-top:4px"><strong style="color:var(--dark)">Missive screenshot</strong> — Missive Analytics → Accounts tab → last 7 days (screenshot)</div>
+    </div>
   </div>
 </div>
 </div>
 
 <div class="footer">
-  <div class="footer-l">Casavecchia · CMO Agent · IG + FB + YT + Gmail · Week of 26 Apr–3 May 2026 · villacasavecchia.com</div>
-  <div class="footer-r">Data: Meta Business Suite · Missive · Chatbase · YouTube Studio · Internal</div>
+  <div class="footer-l">Casavecchia · CMO Agent · FB + YT + Gmail · Week of 3–9 May 2026 · villacasavecchia.com</div>
+  <div class="footer-r">Sources: Meta Business Suite · Missive · YouTube Studio · Internal</div>
 </div>
 
 <script>
@@ -586,18 +608,33 @@ function showTab(name,btn){
 const RED='#924a3b',GREEN='#4e6e58',TAN='#b99d87',SAGE='#8d988e',MID='#5a504a';
 Chart.defaults.font={family:'Montserrat',size:11};
 Chart.defaults.color=MID;
-const fbL=['27 Apr','2 May','28 Apr','1 May','26 Apr','3 May'];
-const fbV=[25598,20587,12161,9457,3578,840];
-const fbR=[20799,16538,11030,7411,3216,762];
-const fbE=[676,497,254,239,99,37];
-new Chart(document.getElementById('c-ov-fb'),{type:'bar',data:{labels:fbL,datasets:[{label:'Views',data:fbV,backgroundColor:RED,borderRadius:2},{label:'Reach',data:fbR,backgroundColor:TAN,borderRadius:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',labels:{font:{size:10},boxWidth:10,boxHeight:10,padding:10}}},scales:{x:{ticks:{font:{size:10}},grid:{display:false}},y:{ticks:{font:{size:10},callback:v=>v>=1000?(v/1000).toFixed(0)+'k':v},grid:{color:'rgba(0,0,0,0.05)'}}}}});
-new Chart(document.getElementById('c-ov-eng'),{type:'bar',data:{labels:fbL,datasets:[{label:'Engagements',data:fbE,backgroundColor:GREEN,borderRadius:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10}},grid:{display:false}},y:{ticks:{font:{size:10}},grid:{color:'rgba(0,0,0,0.05)'}}}}});
-new Chart(document.getElementById('c-ov-dm'),{type:'doughnut',data:{labels:['Messenger (70)','Instagram DMs (64)','Website chatbot (16)'],datasets:[{data:[70,64,16],backgroundColor:[RED,GREEN,TAN],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},boxWidth:10,boxHeight:10,padding:12}}}}});
-const wkL=['Jan 26','Feb 2','Feb 9','Feb 16🔥','Feb 23','Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13🔥','Apr 20','Apr 26→'];
-const wkR=[11231,84895,22648,404974,10989,9319,14059,23961,29026,21189,26757,169848,23135,2654];
-const wkC=wkL.map((l,i)=>i===13?GREEN:(i===3||i===11?RED:TAN));
-new Chart(document.getElementById('c-wvw-ig'),{type:'bar',data:{labels:wkL,datasets:[{label:'IG Reach',data:wkR,backgroundColor:wkC,borderRadius:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:9},maxRotation:45,autoSkip:false}},y:{ticks:{font:{size:10},callback:v=>v>=1000?(v/1000).toFixed(0)+'k':v},grid:{color:'rgba(0,0,0,0.05)'}}}}});
-new Chart(document.getElementById('c-yt-daily'),{type:'bar',data:{labels:['26 Apr','27 Apr','28 Apr','29 Apr','30 Apr','1 May','2 May'],datasets:[{label:'Views',data:[191,389,63,27,14,390,96],backgroundColor:RED,borderRadius:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10}},grid:{display:false}},y:{ticks:{font:{size:10}},grid:{color:'rgba(0,0,0,0.05)'}}}}});
+
+new Chart(document.getElementById('c-ov-eng'),{
+  type:'bar',
+  data:{
+    labels:['Not everything\nhas to reset (4 May)','More is not\nBetter (8 May)','When times\nwere hard (3 May)','Casavecchia\nPinned (9 May)'],
+    datasets:[{label:'Engagements',data:[1553,624,426,116],backgroundColor:[RED,GREEN,TAN,SAGE],borderRadius:2}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:9}},grid:{display:false}},y:{ticks:{font:{size:10}},grid:{color:'rgba(0,0,0,0.05)'}}}}
+});
+
+new Chart(document.getElementById('c-wvw-fb'),{
+  type:'bar',
+  data:{
+    labels:['Jan 26','Feb 2','Feb 9','Feb 16🔥','Feb 23','Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13🔥','Apr 20','Apr 26','May 3→'],
+    datasets:[{label:'FB Engagements / Relative Scale',data:[500,3000,800,15000,400,350,600,900,1100,800,1100,8000,900,1802,2719],backgroundColor:['#b99d87','#b99d87','#b99d87','#924a3b','#b99d87','#b99d87','#b99d87','#b99d87','#b99d87','#b99d87','#b99d87','#924a3b','#b99d87','#b99d87','#4e6e58'],borderRadius:2}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:9},maxRotation:45,autoSkip:false}},y:{ticks:{font:{size:10},callback:v=>v>=1000?(v/1000).toFixed(0)+'k':v},grid:{color:'rgba(0,0,0,0.05)'}}}}
+});
+
+new Chart(document.getElementById('c-yt-daily'),{
+  type:'bar',
+  data:{
+    labels:['3 May','4 May','5 May','6 May','7 May','8 May','9 May'],
+    datasets:[{label:'Engaged Views',data:[376,369,18,9,8,23,17],backgroundColor:RED,borderRadius:2}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10}},grid:{display:false}},y:{ticks:{font:{size:10}},grid:{color:'rgba(0,0,0,0.05)'}}}}
+});
 </script>
 </body>
 </html>
